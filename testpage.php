@@ -16,9 +16,11 @@
 				echo "<a href=".$address.">".$page."</a>&ensp;//&ensp;";
 			}
 
-		 ?>
+		?>
 		 </h4>
 	</div>
+
+
 
 	<div class="footer">
 		<h4>get in touch</h4>
