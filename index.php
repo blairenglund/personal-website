@@ -10,13 +10,10 @@
 	</div>
 
 	<div class="navbar">
-		<?php include 'navbar.php' ?>
+		<?php include 'php/navbar.php' ?>
 	</div>
 
 	<p>hi i'm blair and i make things on the internet and on paper</p>
 
-	<div class="footer">
-		<?php include 'footer.php' ?>
-	</div>
 </body>
 </html>

@@ -8,7 +8,7 @@
 	<div class="header"><h1><a href="index.php" style="color:#2F8DCA; text-decoration:none;">blair englund</a></h1></div>
 
 	<div class="navbar">
-		<?php include 'navbar.php' ?>
+		<?php include 'php/navbar.php' ?>
 	</div>
 
 	<div class="list">

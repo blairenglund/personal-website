@@ -8,7 +8,7 @@
 	<div class="header"><h1><a href="index.php" style="color:#2F8DCA; text-decoration:none;">blair englund</a></h1></div>
 
 	<div class="navbar">
-		<?php include 'navbar.php' ?>
+		<?php include 'php/navbar.php' ?>
 	</div>
 
 	<div class="list">
@@ -25,10 +25,6 @@
 			<li>create my own app</li>
 			<li>fold an origami model every day</li>
 		</ul>
-	</div>
-
-	<div class="footer">
-		<?php include 'footer.php' ?>
 	</div>
 
 </body>
