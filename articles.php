@@ -11,10 +11,7 @@
 	</div>
 
 	<div class="list">
-		<ul>
-			<li><a href="/ai_and_future_of_labor.html">intelligent machines threaten major upheavals in employment and labor.</a></li>
-			<li><a href="/what_is_the_web.html">what is the web?</a></li>
-		</ul>
+		<?php include 'listarticles.php' ?>
 	</div>
 
 	<div class="footer">
