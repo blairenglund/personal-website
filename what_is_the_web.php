@@ -29,7 +29,6 @@
 	</div>
 
 		<div class="footer">
-		<h4>get in touch</h4>
 		<?php include 'footer.php' ?>
 	</div>
 

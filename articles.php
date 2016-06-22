@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php $pageID="articles" ?>
 <html>
 <head>
 	<title>articles</title>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php $pageID="goals" ?>
 <html>
 <head>
 	<title>goals</title>
