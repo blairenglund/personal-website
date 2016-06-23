@@ -3,15 +3,16 @@
 <html>
 <head>
 	<title>what is the web?</title>
+	<link rel="stylesheet" type="text/css" href="personal-website.css">
 </head>
 <body>
-	<div class="header"><h1><a href="index.php" style="color:#2F8DCA; text-decoration:none;">blair englund</a></h1></div>
+	<div class="header"><h1><a href="index.php">blair englund</a></h1></div>
 
 	<div class="navbar">
 		<?php include 'php/navbar.php' ?>
 	</div>
 
-	<div class="article">
+	<div class="content">
 		<h3>what is the web?</h3>
 
 		<h4>What started as a project to help physicists share their research has now evolved into a tool so ubiquitous that it's hard -- impossible for some -- to imagine daily life without it.</h4>

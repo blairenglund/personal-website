@@ -3,15 +3,16 @@
 <html>
 <head>
 	<title>intelligent machines threaten major upheavals in employment and labor.</title>
+	<link rel="stylesheet" type="text/css" href="personal-website.css">
 </head>
 <body>
-	<div class="header"><h1><a href="index.php" style="color:#2F8DCA; text-decoration:none;">blair englund</a></h1></div>
+	<div class="header"><h1><a href="index.php">blair englund</a></h1></div>
 
 	<div class="navbar">
 		<?php include 'php/navbar.php' ?>
 	</div>
 
-	<div class="article">
+	<div class="content">
 		<h3>intelligent machines threaten major upheavals in employment and labor.</h3>
 
 		<h4>As automation and artificial intelligence replace jobs traditionally done by humans, millions will become unemployed, and without a plan in place, we could face a 'labor displacement of a magnitude we haven't seen since the 1930s.'</h4>
