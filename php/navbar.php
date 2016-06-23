@@ -1,5 +1,5 @@
 <h3>Pages</h3>
-<h5><ul>
+<ul>
 <?php 
 	$pages = array("home"=> "index.php", "goals"=> "goals.php", "articles"=> "articles.php", "photos"=> "photos.php");
 	foreach ($pages as $page => $address) {
@@ -11,12 +11,6 @@
 		}
 	}
 ?>
-</ul></h5>
+</ul>
 <h3>Articles</h3>
-<h5>
 <?php include 'php/listarticles.php' ?>
-</h5>
-<h3>Social</h3>
-<h5>
-<?php include 'php/social.php' ?>
-</h5>

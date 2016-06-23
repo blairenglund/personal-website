@@ -19,6 +19,7 @@ a:visited {
 	flex-flow: wrap column;
 	align-items: stretch;
 	margin-top: -10px;
+	min-height: 100vh;
 }
 
 .header {
@@ -27,12 +28,11 @@ a:visited {
 	font-family: Trebuchet, sans-serif;
 	color: #51B4D4;
 	font-size: 2em;
-	text-decoration: none;
 	padding: 10px;
+	text-decoration: none;
 	margin-top: -10px;
 	margin-left: -10px;
 	text-align: center;
-	flex: none;
 }
 
 .header a {
@@ -52,6 +52,7 @@ a:visited {
 	padding:10px;
 	color: #424242;
 	margin-left: -10px;
+	min-height: 100vh;
 }
 
 .navbar a {
@@ -60,6 +61,11 @@ a:visited {
 
 .navbar a:hover {
 	color: #3299BB;
+}
+
+.social {
+	align-items: center;
+	margin: 5px;
 }
 
 .content{

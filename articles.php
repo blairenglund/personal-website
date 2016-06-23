@@ -8,7 +8,8 @@
 <body>
 	<div class="flex-container">
 		<div class="header">
-			<a href="index.php">blair englund</a>
+			<a href="index.php">blair englund</a><br>
+			<?php include 'php/social.php' ?>
 		</div>
 
 		<div class="navbar">
