@@ -36,7 +36,7 @@ a:visited {
 	flex-flow: column nowrap;
 	background-color: #ECB3BA;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	color: #51B4D4;
+	color: #FFFFFF;
 	width: 250px;
 	font-size: 2em;
 	padding: 10px;
@@ -49,12 +49,12 @@ a:visited {
 
 .header a {
 	text-decoration: none;
-	color: #BC9353;
+	color: #FFFFFF;
 }
 
 .header a:hover {
 	text-decoration: none;
-	color: #BC9353;
+	color: #FFFFFF;
 }
 
 .navbar {
