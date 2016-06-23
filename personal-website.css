@@ -1,5 +1,5 @@
 body {
-	background-color: #424242;
+	background-color: #000000;
 	font-family: Trebuchet, sans-serif;
 	color: black;
 }
@@ -14,9 +14,11 @@ a:visited {
 	color: #329900;
 }
 
-.container {
+.flex-container {
 	display: flex;
-	flex-direction: column;
+	flex-flow: wrap column;
+	align-items: stretch;
+	margin-top: -10px;
 }
 
 .header {
@@ -24,11 +26,13 @@ a:visited {
 	background-color: #FF9900;
 	font-family: Trebuchet, sans-serif;
 	color: #51B4D4;
-	font-size: 15pt;
+	font-size: 2em;
 	text-decoration: none;
 	padding: 10px;
 	margin-top: -10px;
 	margin-left: -10px;
+	text-align: center;
+	flex: none;
 }
 
 .header a {
@@ -59,8 +63,8 @@ a:visited {
 }
 
 .content{
+	background-color: #424242 ;
 	color: #E9E9E9;
-	margin-left: 300px;
 }
 
 

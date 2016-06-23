@@ -6,15 +6,19 @@
 	<link rel="stylesheet" type="text/css" href="personal-website.css">
 </head>
 <body>
-	<div class="header"><h1><a href="index.php">blair englund</a></h1></div>
+	<div class="flex-container">
+		<div class="header">
+			<a href="index.php">blair englund</a>
+		</div>
 
-	<div class="navbar">
-		<?php include 'php/navbar.php' ?>
-	</div>
+		<div class="navbar">
+			<?php include 'php/navbar.php' ?>
+		</div>
 
-	<div class="content">
-		<h3>This is a random .gif</h3>
-		<?php include 'php/slideshow/randomslideshow.php' ?>
+		<div class="content">
+			<h3>This is a random .gif</h3>
+			<?php include 'php/slideshow/randomslideshow.php' ?>
+		</div>
 	</div>
 
 </body>

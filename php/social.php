@@ -1,6 +1,4 @@
-<ul>
 	<?php 
-		$links = array("twitter"=> "https://twitter.com/blairenglund", "linkedin"=> "https://www.linkedin.com/in/blairenglund", "github"=> "https://github.com/blairenglund");
-		foreach ($links as $page => $address) {echo "<li><a href=".$address.">".$page."</a></li>";}
+		$links = array("php/icons/icon_twitter_black.png"=> "https://twitter.com/blairenglund", "php/icons/icon_linkedin_black.png"=> "https://www.linkedin.com/in/blairenglund", "php/icons/icon_git_black.png"=> "https://github.com/blairenglund");
+		foreach ($links as $img => $address) {echo "<a href=".$address."><img src=".$img." height=35px ></a>";}
 	?>
-</ul>
