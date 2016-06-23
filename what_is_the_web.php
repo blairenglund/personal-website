@@ -7,13 +7,15 @@
 </head>
 <body>
 	<div class="flex-container">
-		<div class="header">
-			<a href="index.php">blair englund</a><br>
-			<?php include 'php/social.php' ?>
-		</div>
+		<div class="sidebar">
+			<div class="header">
+				<a href="index.php">blair englund</a>
+				<?php include 'php/social.php' ?>
+			</div>
 
-		<div class="navbar">
-			<?php include 'php/navbar.php' ?>
+			<div class="navbar">
+				<?php include 'php/navbar.php' ?>
+			</div>
 		</div>
 
 		<div class="content">
