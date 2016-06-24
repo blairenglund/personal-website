@@ -1,3 +1,5 @@
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
 <h1>Wanna play a game?</h1>
 
 <form>
@@ -13,7 +15,7 @@
 
 <?php if ($_GET["Submit"] == "Submit") { ?>
 
-	<?php $symbols = array("rock"=>"👊", "paper"=>"✋", "scissors"=>"✌️"); ?>
+	<?php $symbols = array("rock"=>'<i class="em em-gem"></i>', "paper"=>'<i class="em em-page_facing_up"></i>', "scissors"=>'<i class="em em-scissors"></i>'); ?>
 
 	<?php 
 	$pc = $_GET["choice"]; 
