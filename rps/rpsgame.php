@@ -41,7 +41,7 @@
 				break;
 			
 			case "paper": 
-				if ($cc == "scissor") { echo "<h3>I win!</h3>";}
+				if ($cc == "scissors") { echo "<h3>I win!</h3>";}
 				else { echo "<h3>You win!</h3>";}
 				break;
 

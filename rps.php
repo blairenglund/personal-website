@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php $pageID="photos" ?>
+<?php $pageID="rock paper scissors" ?>
 <html>
 <head>
 	<title>rock paper scissors</title>
