@@ -31,25 +31,29 @@ a:visited {
 	min-height: 100vh;
 }
 
+@font-face {
+    font-family: Sullivan-Fill;
+    src: url(fonts/Sullivan-Fill.otf);
+}
+
 .header {
 	display: flex;
 	flex-flow: column nowrap;
 	background-color: #FF9900;
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-family: "Sullivan-Fill";
 	color: #51B4D4;
 	width: 250px;
-	font-size: 2em;
-	padding: 10px;
-	padding-top: 25px;
+	padding: 0px 10px 30px 10px;
 	text-decoration: none;
 	margin-top: -10px;
 	margin-left: -10px;
 	text-align: center;
 }
 
-.header a {
+.header #name {
 	text-decoration: none;
 	color: #E9E9E9;
+	font-size: 8em;
 }
 
 .header a:hover {
@@ -98,15 +102,17 @@ a:visited {
     padding-left: 10px;
 }
 
-#currentpage {
-	color: #BCBCBC;
+#currentpage a{
+	color: #ff9900;
 }
 
 .social {
 	display: flex;
+	font-size: 1em;
 	justify-content: space-around;
 	align-items: center;
 	align-self: center;
+	padding: -10px 0 0 30px;
 }
 
 .content{
