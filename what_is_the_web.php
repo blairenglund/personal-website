@@ -3,20 +3,11 @@
 <html>
 <head>
 	<title>what is the web?</title>
-	<link rel="stylesheet" type="text/css" href="personal-website.css">
+	<?php include 'php/themeswitcher.php'; ?>
 </head>
 <body>
 	<div class="flex-container">
-		<div class="sidebar">
-			<div class="header">
-				<a href="index.php">blair englund</a>
-				<?php include 'php/social.php' ?>
-			</div>
-
-			<div class="navbar">
-				<?php include 'php/navbar.php' ?>
-			</div>
-		</div>
+		<?php include 'php/sidebar.php' ?>
 
 		<div class="content">
 			<h3>what is the web?</h3>
