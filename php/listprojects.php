@@ -6,10 +6,10 @@
 	$projects = array("rock paper scissors"=> "rps.php");
 	foreach ($projects as $page => $address) {
 		if ($page == $pageID) {
-			echo "<li id='currentpage'><a href=".$address.">".$page."</a></li>";
+			echo "<li id='currentpage'><a href='/projects/".$address."'>".$page."</a></li>";
 		}
 		else { 
-			echo "<li><a href=".$address.">".$page."</a></li>";
+			echo "<li><a href='/projects/".$address."'>".$page."</a></li>";
 		}
 	}
 ?>
