@@ -33,7 +33,7 @@
 
 			<h4 style="color: #ff9900">don't omit them!</h4>
 			<p>
-				It's true that a page might display correctly without the use of &lt;html&gt;, &lt;head&gt;, and 
+				It's true that a page might display correctly without the use of &lt;html&gt;, &lt;head&gt;, and &lt;body&gt;, but it's not a great practice. These tags provide consistency across all web pages and can increase the functionality and readability of your code. 
 			</p>
 
 		</div>
