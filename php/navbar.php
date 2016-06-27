@@ -12,5 +12,7 @@
 	}
 ?>
 </ul>
+<h3>Projects</h3>
+<?php include 'php/listprojects.php' ?>
 <h3>Articles</h3>
 <?php include 'php/listarticles.php' ?>

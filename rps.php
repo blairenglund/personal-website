@@ -2,6 +2,6 @@
 <?php $pageTitle="rock paper scissors" ?>
 <?php include "top.php" ?>
 
-<?php include 'rps/rpsgame.php' ?>
+<?php include 'projects/rps/rpsgame.php' ?>
 
 <?php include "bottom.php" ?>

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title><?php echo $pageTitle ?></title>
-	<?php include 'php/themeswitcher.php'; ?>
+	<?php include 'php/themeswitcher.php' ?>
 </head>
 <body>
 	<div class="flex-container">
