@@ -11,17 +11,17 @@ Linking between files can become tricky when dealing with many pages in many fol
 <br><br>
 
 Absolute links contain the full address, including the domain, and link out from the current domain. Absolute links are how we move between different sites. These urls will generally include a file path of their own.
+</p>
 
 	<ul>
 		<h4>Example links</h4>
-		<li>articles.php - looks in the current diresctory for a sibbling asset in the same directory. This is dependent on where you are linking from. This is a relative link.</li>
+		<li><strong>articles.php</strong> - looks in the current diresctory for a sibbling asset in the same directory. This is dependent on where you are linking from. This is a relative link.</li>
 
-		<li>/articles.php - a leading slash defaults to the root directory. It doesn't matter what page it links from, the slash tells the browser to go to the root directory instead of the local one. This is also a relative link.</li>
+		<li><strong>/articles.php</strong> - a leading slash defaults to the root directory. It doesn't matter what page it links from, the slash tells the browser to go to the root directory instead of the local one. This is also a relative link.</li>
 
-		<li>../articles - the double dots before the slash tell the browser that the file we are linking to is in the previous directory. These can be stacked i.e: ../../2016/story.php. This is, once again, a relative link because it is finding the page in the parent directory.</li>
+		<li><strong>../articles</strong> - the double dots before the slash tell the browser that the file we are linking to is in the previous directory. These can be stacked i.e: ../../2016/story.php. This is, once again, a relative link because it is finding the page in the parent directory.</li>
 
-		<li>http://site.com/articles - this is an absolute link. Instead of telling to browser to just look at the local directory or in other directories on the site, it will find the page on the web. This is necessary for linking to another domain.</li>
+		<li><strong>http://site.com/articles</strong> - this is an absolute link. Instead of telling to browser to just look at the local directory or in other directories on the site, it will find the page on the web. This is necessary for linking to another domain.</li>
 	</ul>
-</p>
 
-<?php include "bottom.php"
+<?php include "bottom.php" ?>
