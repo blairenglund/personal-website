@@ -1,17 +1,7 @@
-<!DOCTYPE html>
 <?php $pageID="articles" ?>
-<html>
-<head>
-	<title>articles</title>
-	<?php include 'php/themeswitcher.php'; ?>
-</head>
-<body>
-	<div class="flex-container">
-		<?php include 'php/sidebar.php' ?>
+<?php $pageTitle="articles" ?>
+<?php include "top.php" ?>
 
-		<div class="content">
-			<?php include 'listarticles.php' ?>
-		</div>
-	</div>
-</body>
-</html>
+<?php include 'listarticles.php' ?>
+
+<?php include "bottom.php" ?>

@@ -1,18 +1,7 @@
-<!DOCTYPE html>
 <?php $pageID="rock paper scissors" ?>
-<html>
-<head>
-	<title>rock paper scissors</title>
-	<?php include 'php/themeswitcher.php'; ?>
-</head>
-<body>
-	<div class="flex-container">
-		<?php include 'php/sidebar.php' ?>
+<?php $pageTitle="rock paper scissors" ?>
+<?php include "top.php" ?>
 
-		<div class="content">
-			<?php include 'rps/rpsgame.php' ?>
-		</div>
-	</div>
+<?php include 'rps/rpsgame.php' ?>
 
-</body>
-</html>
+<?php include "bottom.php" ?>

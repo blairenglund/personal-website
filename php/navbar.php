@@ -1,5 +1,3 @@
-
-
 <h3>Pages</h3>
 <ul>
 <?php 
