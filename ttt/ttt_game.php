@@ -1,49 +1,27 @@
-<style type="text/css">
-	table{
-		border-spacing: 5px;
-	}
+<link rel="stylesheet" type="text/css" href="ttt_style.css">
 
-	@font-face {
-	    font-family: Sullivan-Fill;
-	    src: url(../css/fonts/Sullivan-Fill.otf);
-	}
-
-	td{
-    	border-collapse: collapse;
-    	padding: 40px 40px 0px 40px;
-    	background-color: #ccc;
-    	font-family: "Sullivan-Fill";
-    	font-size: 2em;
-	}
-
-	td:hover{
-		background-color: #3299BB;
-	}
-
-	td:onclick{
-		background-color: #3299BB;
-	}
-
-</style>
+<?php print_r($_GET)
+function FunctionName($value='')
+{
+	# code...
+}
 
 
+?>
 
 <table>
 	<tr>
 		<td>
-			<?php if $_GET["A1Submit"] == "Submit"; {echo $_GET["A1"]} 
-			else { ?>
-				<form>
-				<input type="radio" name="A1" value="X">X
-				<input type="radio" name="A1" value="O">O<br>
-				<input type="submit" name="A1Submit">
-				</form>
-			<?php } ?>
+			<form action="ttt_playedmoves.php">
+			<input type="radio" name="A1" value="X" <?php if ($_GET["A1"]=="X") { ?> checked <?php } ?> >X
+			<input type="radio" name="A1" value="O" <?php if ($_GET["A1"]=="O") { ?> checked <?php } ?> >O<br>
+			<input type="submit" name="A1Submit">
+			</form>
 		</td>
 		<td>
 			<form>
-			<input type="radio" name="A2" value="X">X
-			<input type="radio" name="A2" value="O">O<br>
+			<input type="radio" name="A2" value="X" <?php if ($_GET["A2"]=="X") { ?> checked <?php } ?> >X
+			<input type="radio" name="A2" value="O" <?php if ($_GET["A2"]=="O") { ?> checked <?php } ?> >O<br>
 			<input type="submit" name="A2Submit">
 			</form>
 		</td>

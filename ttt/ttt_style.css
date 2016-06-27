@@ -1,0 +1,27 @@
+<style type="text/css">
+	table{
+		border-spacing: 5px;
+	}
+
+	@font-face {
+	    font-family: Sullivan-Fill;
+	    src: url(../css/fonts/Sullivan-Fill.otf);
+	}
+
+	td{
+    	border-collapse: collapse;
+    	padding: 40px 40px 0px 40px;
+    	background-color: #ccc;
+    	font-family: "Sullivan-Fill";
+    	font-size: 2em;
+	}
+
+	td:hover{
+		background-color: #3299BB;
+	}
+
+	td:onclick{
+		background-color: #3299BB;
+	}
+
+</style>
