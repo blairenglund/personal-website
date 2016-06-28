@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php $pageID="intelligent machines threaten major upheavals in employment and labor." ?>
-<?php include "../top.php" ?>
+<?php include "articles_top.php" ?>
 
 <h3>intelligent machines threaten major upheavals in employment and labor.</h3>
 
@@ -12,4 +12,4 @@ Prior to the Industrial Revolution, 90% of Americans worked on farms. Over the c
 Self-driving vehicles have already hit the road and it may not be long until most or all travel and shipping is automated. This could lead to unemployment rates that would rival those of the Great Depression. The key to overcoming such a crisis? Providing relief and retraining for the economically displaced. In 1933, Roosevelt's New Deal helped rebuild the economy and the United States' infrastructure by putting the unemployed to work in programs like the Public Works Administration.<br><br>
 "We need to update the New Deal for the 21st century and establish a trainee program for the new jobs artificial intelligence will create." says Ng. While old jobs will disappear, countless new jobs we can't imagine will be created. A proactive approach to training people for those jobs is necessary to make the transition to an era of machine-intelligence a smooth one.</p>
 
-<?php include 'bottom.php' ?>
+<?php include 'articles_bottom.php' ?>

@@ -1,6 +1,6 @@
 <?php $pageID="what is the web?" ?>
 <?php $pageTitle="what is the web" ?>
-<?php include "top.php" ?>
+<?php include "articles_top.php" ?>
 
 <h3>what is the web?</h3>
 
@@ -18,4 +18,4 @@
 	Berners-Lee created the World Wide Web by creating a system for storing and displaying pages of text, and then linking to other pages within the text (called <em>hypertext</em>). These connections form the web part of the World Wide Web. These pages of text contain code called <em>hypertext markup language</em> or HTML, also created by Berners-Lee. HTML is the standard in creating webpages and displaying them correctly on a browser. Berners-Lee and his team at CERN also developed <em>hypertext transfer protocall</em> or HTTP, the system by which we move between pages. The final part of the system developed by Berners-Lee at CERN was to create a URI (<em>universal resource indicator</em>) system he called a URL (yes it is confusing). The <em>universal resource locator</em> is the address we use to find the pages we want to connect to. URLs use a domain and a syntax that defines pages' location with slashes.
 </p>
 
-<?php include "bottom.php" ?>
+<?php include "articles_bottom.php" ?>

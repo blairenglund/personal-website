@@ -1,6 +1,6 @@
 <?php $pageID="links and file structure" ?>
 <?php $pageTitle = "links and file structure" ?>
-<?php include "top.php" ?>
+<?php include "articles_top.php" ?>
 
 <h3>links and file structure</h3>
 
@@ -24,4 +24,4 @@ Absolute links contain the full address, including the domain, and link out from
 		<li><strong>http://site.com/articles</strong> - this is an absolute link. Instead of telling to browser to just look at the local directory or in other directories on the site, it will find the page on the web. This is necessary for linking to another domain.</li>
 	</ul>
 
-<?php include "bottom.php" ?>
+<?php include "articles_bottom.php" ?>

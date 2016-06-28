@@ -1,6 +1,6 @@
 <?php $pageID="head, body, and html" ?>
 <?php $pageTitle="head, body, and html" ?>
-<?php include "top.php" ?>
+<?php include "articles_top.php" ?>
 
 <h3>head, body, and html</h3>
 
@@ -28,4 +28,4 @@
 	It's true that a page might display correctly without the use of &lt;html&gt;, &lt;head&gt;, and &lt;body&gt;, but it's not a great practice. These tags provide consistency across all web pages and can increase the functionality and readability of your code. 
 </p>
 
-<?php include "bottom.php" ?>
+<?php include "articles_bottom.php" ?>
