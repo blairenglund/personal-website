@@ -1,17 +1,18 @@
 <style type="text/css">
+
 	table{
 		border-spacing: 5px;
 	}
 
 	@font-face {
 	    font-family: Sullivan-Fill;
-	    src: url(../css/fonts/Sullivan-Fill.otf);
+	    src: url(/css/fonts/Sullivan-Fill.otf);
 	}
 
 	td{
     	border-collapse: collapse;
-    	padding: 40px 40px 0px 40px;
-    	background-color: #ccc;
+    	padding: 40px 40px 40px 40px;
+    	background-color: #2289AB;
     	font-family: "Sullivan-Fill";
     	font-size: 2em;
 	}
@@ -21,6 +22,22 @@
 	}
 
 	td:onclick{
+		background-color: #3299BB;
+	}
+
+	input[type=radio]{
+		background-color: red;
+	}
+
+	input[type=submit] {
+		background-color: #2289AB;
+		color: white;
+		border: none;
+		height: 25px;
+		width: 50px;
+	}
+
+	input[type=submit]:hover {
 		background-color: #3299BB;
 	}
 
