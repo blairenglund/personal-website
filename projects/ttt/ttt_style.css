@@ -12,24 +12,40 @@
 	td{
     	border-collapse: collapse;
     	padding: 40px 40px 40px 40px;
-    	background-color: #2289AB;
+    	background-color: #E9E9E9;
     	font-family: "Sullivan-Fill";
     	font-size: 2em;
 	}
 
 	td:hover{
-		background-color: #3299BB;
+		background-color: #f9f9f9;
 	}
 
 	td:onclick{
 		background-color: #3299BB;
 	}
 
-	input[type=radio]{
+	td input[type=radio]{
 		background-color: red;
 	}
 
-	input[type=submit] {
+	.xselected {
+		background-color: #FF9900;
+	}
+
+	.xselected:hover {
+		background-color: #FF9900;
+	}
+
+	.oselected {
+		background-color: #AA9900;
+	}
+
+	.oselected:hover {
+		background-color: #AA9900;
+	}
+
+	form input[type=submit] {
 		background-color: #2289AB;
 		color: white;
 		border: none;

@@ -1,7 +1,7 @@
 <?php $pageID="Tic Tac Toe" ?>
 <?php $pageTitle="Tic Tac Toe" ?>
-<?php include "top.php" ?>
+<?php include "projects_top.php" ?>
 
-<? include "ttt/ttt_game.php" ?>
+<?php include "ttt/ttt_game.php" ?>
 
-<?php include "bottom.php" ?>
+<?php include "projects_bottom.php" ?>
