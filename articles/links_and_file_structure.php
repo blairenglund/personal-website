@@ -2,9 +2,9 @@
 <?php $pageTitle = "links and file structure" ?>
 <?php include "articles_top.php" ?>
 
-<h3>links and file structure</h3>
+<h1>links and file structure</h1>
 
-<h4>Organized file structures make for easy linking</h4>
+<h3>Organized file structures make for easy linking</h3>
 
 <p>
 Linking between files can become tricky when dealing with many pages in many folders. Links come in two varieties: relative and absolute. Relative links work only in the current site. When the viewer clicks that link, it will take them to another page in the same site. They do not require a full URL, just the file path and file name. If the file eric.php is in the folder "friends" and that folder is in another folder called "people" in the root directory, it's path will be "/people/friends/eric.php"

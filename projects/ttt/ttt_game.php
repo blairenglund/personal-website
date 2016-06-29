@@ -2,7 +2,7 @@
 
 <?php include "ttt_scripts.php"; ?>
 
-<h2>Tic Tac Toe</h2>
+<h1>Tic Tac Toe</h1>
 <form>
 <?php if ($_GET["Submit"]=="Start") { ?>
 <table>

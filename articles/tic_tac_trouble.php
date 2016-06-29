@@ -1,4 +1,8 @@
-<h3>tic tac trouble</h3>
+<?php $pageID="tic tac trouble" ?>
+<?php $pageTitle = "tic tac trouble" ?>
+<?php include "articles_top.php" ?>
+
+<h1>tic tac trouble</h1>
 
 <h4>DAY 1 : The breakdown</h3>
 <p>
@@ -26,3 +30,4 @@ After getting it to a half-functioning state I built a test for the function. Th
 I broke down the table and built in some php algorithms to change the color when a position is played. I dropped the radio buttons for submit buttons, and then drpped those for standard links. Using a PHP function to grab the current URL, I was able to add params with the links. Now I can have the boxes change color, making the game a lot easier to understand visually. Combining this new functionality with the old algorithm I created a very basic tic tac toe board with visual cues for a win.
 
 </p>
+<?php include "articles_bottom.php" ?>

@@ -27,6 +27,7 @@
 	.unselected__X {
 		color: #E9E9E9;
 		transition: all .2s ease-in-out;
+		text-decoration: none;
 	}
 
 	.unselected__X:visited {
@@ -41,6 +42,7 @@
 	.unselected__O {
 		transition: all .2s ease-in-out;
 		color: #E9E9E9;
+		text-decoration: none;		
 	}
 
 	.unselected__O:visited {

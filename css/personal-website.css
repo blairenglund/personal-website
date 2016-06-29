@@ -67,6 +67,10 @@ body {
 	min-height: 100vh;
 }
 
+.navbar a {
+	text-decoration: none;
+}
+
 .navbar a:hover {
 	color: #3299BB;
 }

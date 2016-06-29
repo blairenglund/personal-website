@@ -2,9 +2,9 @@
 <?php $pageTitle="head, body, and html" ?>
 <?php include "articles_top.php" ?>
 
-<h3>head, body, and html</h3>
+<h1>head, body, and html</h1>
 
-<h4>A quick and dirty guide to what html's &lt;html&gt;, &lt;head&gt;, and &lt;body&gt; tags do and why we use them.</h4>
+<h3>A quick and dirty guide to what html's &lt;html&gt;, &lt;head&gt;, and &lt;body&gt; tags do and why we use them.</h3>
 
 <h4 style="color: #ff9900">&lt;html&gt; - where it all goes</h4>
 <p>

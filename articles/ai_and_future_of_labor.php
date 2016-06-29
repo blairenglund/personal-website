@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<?php $pageID="intelligent machines threaten major upheavals in employment and labor." ?>
+<?php $pageID="intelligent machines threaten major upheavals in employment and labor" ?>
+<?php $pageTitle="intelligent machines threaten major upheavals in employment and labor" ?>
 <?php include "articles_top.php" ?>
 
-<h3>intelligent machines threaten major upheavals in employment and labor.</h3>
+<h1>intelligent machines threaten major upheavals in employment and labor</h1>
 
-<h4>As automation and artificial intelligence replace jobs traditionally done by humans, millions will become unemployed, and without a plan in place, we could face a 'labor displacement of a magnitude we haven't seen since the 1930s.'</h4>
+<h3>As automation and artificial intelligence replace jobs traditionally done by humans, millions will become unemployed, and without a plan in place, we could face a 'labor displacement of a magnitude we haven't seen since the 1930s.'</h3>
 
 <p>If a trucking company had a choice between a team of human drivers and a fleet of self-driven trucks, what's the likeliest choice? Whereas human drivers need food, sleep, and money (and are prone to error when those needs aren't met), an intelligent, self-driving vehicle can drive 24/7 with only occasional stops for fuel and maintenance and never get in an accident. "What company, faced with that choice, would choose expensive, error-prone human drivers?" says Andrew Ng, chief scientist at Baidu.<br><br>
 Those truck drivers, like millions of others working in careers with the potential for full automation, may find themselves wholly unemployed in the near future. Fortunately, this potential upheaval is not unprecedented.<br><br>

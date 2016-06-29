@@ -2,9 +2,9 @@
 <?php $pageTitle="what is the web" ?>
 <?php include "articles_top.php" ?>
 
-<h3>what is the web?</h3>
+<h1>what is the web?</h1>
 
-<h4>What started as a project to help physicists share their research has now evolved into a tool so ubiquitous that it's hard -- impossible for some -- to imagine daily life without it.</h4>
+<h3>What started as a project to help physicists share their research has now evolved into a tool so ubiquitous that it's hard -- impossible for some -- to imagine daily life without it.</h3>
 
 <p>
 	<img src="https://67.media.tumblr.com/c3d4185a83e5bdebcb8d6dc6ddf34e02/tumblr_o2592z5dwA1sgixyoo1_500.gif"><br><br>
