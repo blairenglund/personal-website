@@ -1,61 +1,51 @@
 <link rel="stylesheet" type="text/css" href="/projects/ttt/ttt_style.css">
 
-<?php
+<?php include "ttt_scripts.php"; ?>
 
-include "function_curPageUrl.php";
-$url = curPageURL();
-echo curPageURL()."<br>";
-print_r($_GET);
-
-?>
-
-<h3>Tic Tac Toe</h3>
+<h2>Tic Tac Toe</h2>
 <form>
+<?php if ($_GET["Submit"]=="Start") { ?>
 <table>
 	<tr>
-		<td <?php if ($_GET["A1"] == "X"){ ?> class="xselected" <?php } elseif ($_GET["A1"] == "O") { ?> class="oselected" <?php } ?> >
-			<?php echo '<a href="'.$url.'&A1=X">'; ?> X</a>
-			<?php echo '<a href="'.$url.'&A1=O">'; ?> O</a>
+		<td <?php gamebox("A1") ?> >
+			<?php gameboxLinks("A1")?>
 		</td>
-		<td <?php if ($_GET["A2"] == "X"){ ?> class="xselected" <?php } elseif ($_GET["A2"] == "O") { ?> class="oselected" <?php } ?> >
-			<?php echo '<a href="'.$url.'&A2=X">'; ?> X</a>
-			<?php echo '<a href="'.$url.'&A2=O">'; ?> O</a>
+		<td <?php gamebox("A2") ?> >
+			<?php gameboxLinks("A2")?>
 		</td>
-		<td <?php if ($_GET["A3"] == "X"){ ?> class="xselected" <?php } elseif ($_GET["A3"] == "O") { ?> class="oselected" <?php } ?> >
-			<?php echo '<a href="'.$url.'&A3=X">'; ?> X</a>
-			<?php echo '<a href="'.$url.'&A3=O">'; ?> O</a><br>
+		<td <?php gamebox("A3") ?> >
+			<?php gameboxLinks("A3")?>
 		</td>
 	</tr>
 	<tr>
-		<td <?php if ($_GET["B1"] == "X"){ ?> class="xselected" <?php } elseif ($_GET["B1"] == "O") { ?> class="oselected" <?php } ?> >
-			<?php echo '<a href="'.$url.'&B1=X">'; ?> X</a>
-			<?php echo '<a href="'.$url.'&B1=O">'; ?> O</a>
+		<td <?php gamebox("B1") ?> >
+			<?php gameboxLinks("B1")?>
 		</td>
-		<td <?php if ($_GET["B2"] == "X"){ ?> class="xselected" <?php } elseif ($_GET["B2"] == "O") { ?> class="oselected" <?php } ?> >
-			<?php echo '<a href="'.$url.'&B2=X">'; ?> X</a>
-			<?php echo '<a href="'.$url.'&B2=O">'; ?> O</a>
-		<td <?php if ($_GET["B3"] == "X"){ ?> class="xselected" <?php } elseif ($_GET["B3"] == "O") { ?> class="oselected" <?php } ?> >
-			<?php echo '<a href="'.$url.'&B3=X">'; ?> X</a>
-			<?php echo '<a href="'.$url.'&B3=O">'; ?> O</a>
+		<td <?php gamebox("B2") ?> >
+			<?php gameboxLinks("B2")?>
+		</td>
+		<td <?php gamebox("B3") ?>  >
+			<?php gameboxLinks("B3")?>
 		</td>
 	</tr>
 	<tr>
-		<td <?php if ($_GET["C1"] == "X"){ ?> class="xselected" <?php } elseif ($_GET["C1"] == "O") { ?> class="oselected" <?php } ?> >
-			<?php echo '<a href="'.$url.'&C1=X">'; ?> X</a>
-			<?php echo '<a href="'.$url.'&C1=O">'; ?> O</a>
+		<td <?php gamebox("C1") ?> >
+			<?php gameboxLinks("C1")?>
 		</td>
-		<td <?php if ($_GET["C2"] == "X"){ ?> class="xselected" <?php } elseif ($_GET["C2"] == "O") { ?> class="oselected" <?php } ?> >
-			<?php echo '<a href="'.$url.'&C2=X">'; ?> X</a>
-			<?php echo '<a href="'.$url.'&C2=O">'; ?> O</a>
-		<td <?php if ($_GET["C3"] == "X"){ ?> class="xselected" <?php } elseif ($_GET["C3"] == "O") { ?> class="oselected" <?php } ?> >
-			<?php echo '<a href="'.$url.'&C3=X">'; ?> X</a>
-			<?php echo '<a href="'.$url.'&C3=O">'; ?> O</a>
+		<td <?php gamebox("C2") ?> >
+			<?php gameboxLinks("C2")?>
+		</td>
+		<td <?php gamebox("C3") ?> >
+			<?php gameboxLinks("C3")?>
 		</td>
 	</tr>
 </table>
-<input type="submit" name="Submit" value="Start">
-<input type="submit" name="Submit" value="Reset">
+<?php } ?>
+<br>
+<input class="game__submit" type="submit" name="Submit" value="Start">
+<?php if ($_GET["Submit"]=="Start"){ ?><input class="game__submit" type="submit" name="Submit" value="Reset"><?php } ?>
 </form>
+<br>
 
 <?php
 $exes = array();
@@ -67,10 +57,10 @@ foreach ($_GET as $position => $value) {
 } ?>
 
 <?php
-if ($_GET["Submit"]=="Start") {
- 	include 'ttt_determineWinner.php';}
-	
+if ($_GET["Submit"]=="Start"){
 	if (determineWinner($exes) == true) {echo "The Xs have it!";}
 	elseif (determineWinner($ohs) == true) {echo "The Os have it!";}
+}
+determineDraw($exes, $ohs);
 ?>
 
