@@ -28,23 +28,32 @@ a:visited {
 	flex-direction: column;
 	flex: 0 0 auto;
 	position: fixed;
-	min-height: <php?  ?>;
+	min-height: 100vh;
+}
+
+@font-face {
+    font-family: Sullivan-Fill;
+    src: url(fonts/Sullivan-Fill.otf);
 }
 
 .header {
 	display: flex;
 	flex-flow: column nowrap;
 	background-color: #ECB3BA;
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-family: "Sullivan-Fill";
 	color: #FFFFFF;
 	width: 250px;
-	font-size: 2em;
-	padding: 10px;
-	padding-top: 25px;
+	padding:  0px 10px 30px 10px;
 	text-decoration: none;
 	margin-top: -10px;
 	margin-left: -10px;
 	text-align: center;
+}
+
+.header #name {
+	text-decoration: none;
+	color: #E9E9E9;
+	font-size: 8em;
 }
 
 .header a {
@@ -69,12 +78,33 @@ a:visited {
 	min-height: 100vh;
 }
 
-.navbar a {
-	color: #E3E383;
+.navbar ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0;
+    width: 60px;
 }
 
-.navbar a:hover {
-	color: #E3E383;
+.navbar li a {
+    display: block;
+    width: 260px;
+    padding: 5px 0 5px 0;
+    color: #FFFFFF;
+}
+
+.navbar li a:hover {
+    background-color: #ECB3BA;
+    color: white;
+    margin-left: -10px;
+    padding-left: 10px;
+}
+
+#currentpage a{
+	color: #ECB3BA;
+}
+
+#currentpage a:hover{
+	color:#FFF;
 }
 
 #currentpage {
