@@ -1,6 +1,6 @@
 <div class="sidebar">
 	<div class="header">
-		<a href="/"><div id="name">blair</div></a>
+		<a class="header__name" href="/">blair</a>
 		<?php include 'php/social.php' ?>
 	</div>
 
