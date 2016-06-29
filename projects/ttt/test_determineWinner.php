@@ -1,5 +1,5 @@
 <?php 
-include 'ttt_determineWinner.php';
+include 'ttt_scripts.php';
 
 echo "\nTesting that three in top row wins\n";
 $test1 = array("A1", "A2", "A3");

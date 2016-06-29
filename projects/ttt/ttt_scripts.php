@@ -48,9 +48,7 @@ function determineWinner($ary){
 //this function determines if there is a draw. if neither the $exes and $ohs have a win, and there are five X moves played, then it's a draw.
 
 function determineDraw($ary1, $ary2){
-	if (determineWinner($ary1) == false && determineWinner($ary1) == false && sizeof($ary1) >= 5) {
-		echo "It's a draw. Try again?";
-	}
+	if (determineWinner($ary1) == false && determineWinner($ary1) == false && sizeof($ary1) >= 5) {return true;}
 }
 
 
