@@ -1,4 +1,5 @@
 <?php 
+//this function generates the current page's URL
 function curPageURL() {
 	$pageURL = 'http';
 	if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
@@ -9,12 +10,14 @@ function curPageURL() {
 	return $pageURL;
 }
 
+//this function gets the correct style for the boxes based on what marker they contain
 function gamebox($coords){
 	if ($_GET[$coords] == "X"){echo 'class="xselected"';} 
 	elseif ($_GET[$coords] == "O"){echo 'class="oselected"';} 
 	else {echo 'class="gamebox"';}
 }
 
+//this function generates links to choose the marker if one hasn't been put in that spot.
 function gameboxLinks($coords){
 	$url = curPageURL();
 	if ($_GET[$coords] == "X"){echo "X";}
@@ -42,7 +45,7 @@ function determineWinner($ary){
 	else {return false;}
 }
 
-//this function determines if there is a draw. if neither the $exes and $ohs have a win, and there are nine moves played, then it's a draw.
+//this function determines if there is a draw. if neither the $exes and $ohs have a win, and there are five X moves played, then it's a draw.
 
 function determineDraw($ary1, $ary2){
 	if (determineWinner($ary1) == false && determineWinner($ary1) == false && sizeof($ary1) >= 5) {
