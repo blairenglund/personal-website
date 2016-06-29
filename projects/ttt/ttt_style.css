@@ -1,9 +1,5 @@
 <style type="text/css">
 
-	table{
-		border-spacing: 5px;
-	}
-
 	@font-face {
 	    font-family: Sullivan-Fill;
 	    src: url(/css/fonts/Sullivan-Fill.otf);
@@ -17,10 +13,11 @@
     	font-family: "Sullivan-Fill";
     	font-size: 2em;
     	text-align: center;
+    	transition: all .2s ease-in-out;
 	}
 
 	.gamebox:hover{
-		background-color: #f9f9f9;
+		background-color: #fbfbfb;
 	}
 
 	.gamebox:onclick{
@@ -28,30 +25,30 @@
 	}
 
 	.unselected__X {
-		color: #424242;
+		color: #E9E9E9;
 		transition: all .2s ease-in-out;
 	}
 
 	.unselected__X:visited {
-		color: #424242;
+		color: #E9E9E9;
 	}
 
 	.unselected__X:hover {
-		font-size: 1.4em;
+		font-size: 1.2em;
 		color: #FF9900;
 	}
 
 	.unselected__O {
 		transition: all .2s ease-in-out;
-		color: #424242;
+		color: #E9E9E9;
 	}
 
 	.unselected__O:visited {
-		color: #424242;
+		color: #E9E9E9;
 	}
 
 	.unselected__O:hover {
-		font-size: 1.4em;
+		font-size: 1.2em;
 		color: #3299BB;
 	}
 
@@ -81,7 +78,7 @@
 		color: white;
 		border: none;
 		height: 25px;
-		width: 100px;
+		width: 125px;
 	}
 
 	.game__submit:hover {
