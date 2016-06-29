@@ -62,7 +62,7 @@ if ($_GET["Submit"]=="Start"){
 	elseif (determineWinner($ohs) == true) {echo "The Os have it!";}
 }
 
-if (determineDraw($exes, $ohs) == true){echo "It's a draw. Try again?";}
+if (determineDraw($exes, $ohs) == true){echo "It's a draw. Press Start to play again.";}
 
 ?>
 
