@@ -67,6 +67,7 @@ if ($_GET["Submit"]=="Start"){
 if ($_GET["Submit"]=="Start"){
 	if (determineTurn($exes, $ohs)==1){echo "It's your turn, Player 1";}
 	elseif (determineTurn($exes, $ohs)==2) {echo "It's your turn, Player 2";}
+	elseif (determineTurn($exes, $ohs)==0) {echo "No moves remain.";}
 }
 
 if (determineDraw($exes, $ohs) == true){echo "It's a draw. Press Start to play again.<br>";}

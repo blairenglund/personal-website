@@ -12,7 +12,7 @@ function curPageURL() {
 
 //this function tracks the current turn
 function determineTurn($ary1, $ary2){
-	if(count($ary1) == 5) {echo "No more moves.<br>";}
+	if(count($ary1) == 5) {return 0;}
 	elseif (determineWinner($ary1) == false && determineWinner($ohs) == false) {
 		if (count($ary1) == count($ary2)) {return 1;}
 		elseif (count($ary1) > count($ary2)) {return 2;}
