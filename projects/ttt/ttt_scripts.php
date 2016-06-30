@@ -63,17 +63,33 @@ function determineDraw($ary1, $ary2){
 }
 
 //this function will determine the computer's choice to play
-//function computerChoice($ary){
-	//$corners = array("A1", "A3", "C1", "C3")
+function computerChoice($ary){
+	$corners = array("A1", "A3", "C1", "C3");
+	//will need to remove corners as they are played
+	foreach ($corners as $position) {
+		if (array_key_exists($position, $_GET)) {
+			array_splice($corners, array_search($position, $corners));
+		}
+	}
+	$randomCorner = $corners[array_rand($corners)];
+
+	$possiblePlays = array("A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3");
+	//will need to remove any play as it is played
+	foreach ($possiblePlays as $position) {
+		if (array_key_exists($position, $_GET)) {
+			array_splice($possiblePlays, array_search($position, $possiblePlays));
+		}
+	}
+	$randomMove = $possiblePlays[array_rand($possiblePlays)];
 	//if b2, the best position is not played, plays there
-	//if (in_array("B2", $ary)==false){array_push($ary, "B2"); $ary["B2"]=>"X"}
+	if (array_key_exists("B2", $ary) == false) {return "B2";}
 	//if b2 is played, then plays in a corner
-	//elseif (in_array("B2", $ary)==true){array_push($ary, array_rand($corners)=>"X"}
+	elseif (array_key_exists("B2", $ary) == true) {return $randomCorner;}
 	//if the opponent has two in a row, then plays to block
 	//elseif (){}
 	//if none of the above conditions are met, plays randomly
-	//else (){}
-//}
+	else {array_push($ary, $randomMove);}
+}
 
 
 ?>
