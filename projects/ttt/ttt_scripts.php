@@ -63,26 +63,16 @@ function determineDraw($ary1, $ary2){
 }
 
 //this function will determine the computer's choice to play
-//function computerChoice(){
+//function computerChoice($ary){
+	//$corners = array("A1", "A3", "C1", "C3")
 	//if b2, the best position is not played, plays there
-	//if (){}
+	//if (in_array("B2", $ary)==false){array_push($ary, "B2"); $ary["B2"]=>"X"}
 	//if b2 is played, then plays in a corner
-	//elseif (){}
+	//elseif (in_array("B2", $ary)==true){array_push($ary, array_rand($corners)=>"X"}
 	//if the opponent has two in a row, then plays to block
 	//elseif (){}
 	//if none of the above conditions are met, plays randomly
 	//else (){}
-//}
-
-//this function will keep track of player order. Might add in a field for players' names
-//function turnOrder(){
-	//if the $_GET has no coords in it then it's p1's turn
-	//if (){}
-	//if it has one played coord, then it's p2's turn
-	//elseif (){}
-	//if it has an even number of played coords, then it's back to p1's
-	//if it has an odd number of played coords, then it's back to p2's
-	//if someone wins or all nine are filled with no wine then it's over.
 //}
 
 

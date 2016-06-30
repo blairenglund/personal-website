@@ -60,14 +60,14 @@ foreach ($_GET as $position => $value) {
 
 <?php
 if ($_GET["Submit"]=="Start"){
-	if (determineWinner($exes) == true) {echo "The Xs have it! Press Start to play again.";}
-	elseif (determineWinner($ohs) == true) {echo "The Os have it! Press Start to play again.";}
+	if (determineWinner($exes) == true) {echo "The Xs have it!<br>";}
+	elseif (determineWinner($ohs) == true) {echo "The Os have it!<br>";}
 }
 
 if ($_GET["Submit"]=="Start"){
-	if (determineTurn($exes, $ohs)==1){echo "It's your turn, Player 1";}
+	if (determineWinner($exes) == true or determineWinner($ohs) == true) {echo "Nice job! Press Start to play again.";}
+	elseif (determineTurn($exes, $ohs)==1){echo "It's your turn, Player 1";}
 	elseif (determineTurn($exes, $ohs)==2) {echo "It's your turn, Player 2";}
-	elseif (determineTurn($exes, $ohs)==0) {echo "No moves remain.";}
 }
 
 if (determineDraw($exes, $ohs) == true){echo "It's a draw. Press Start to play again.<br>";}

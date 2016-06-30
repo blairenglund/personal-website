@@ -18,10 +18,7 @@
 
 	.gamebox:hover{
 		background-color: #fbfbfb;
-	}
-
-	.gamebox:onclick{
-		background-color: #3299BB;
+		font-size: 2em;
 	}
 
 	.unselected__X {
