@@ -35,7 +35,7 @@
 	}
 
 	.unselected__X:hover {
-		font-size: 1.2em;
+		font-size: 2em;
 		color: #FF9900;
 	}
 
@@ -50,7 +50,7 @@
 	}
 
 	.unselected__O:hover {
-		font-size: 1.2em;
+		font-size: 2em;
 		color: #3299BB;
 	}
 
@@ -60,7 +60,7 @@
     	width: 80px;
     	height: 80px;
 		font-family: "Sullivan-Fill";
-		font-size: 3em;
+		font-size: 4em;
 		text-align: center;
 	}
 
@@ -70,7 +70,7 @@
     	width: 80px;
     	height: 80px;
 		font-family: "Sullivan-Fill";
-		font-size: 3em;
+		font-size: 4em;
 		text-align: center;
 
 	}

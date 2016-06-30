@@ -33,7 +33,7 @@ function gameboxLinks($coords, $ary1, $ary2){
 	elseif ($_GET[$coords] == "O"){echo "O";}
 	else {
 		if(determineTurn($ary1, $ary2) == 1){
-			echo '<a class="unselected__X" href="'.$url.'&'.$coords.'=X">X</a>&nbsp;';}
+			echo '<a class="unselected__X" href="'.$url.'&'.$coords.'=X">X</a>';}
 		elseif(determineTurn($ary1, $ary2) == 2){
 			echo '<a class="unselected__O" href="'.$url.'&'.$coords.'=O">O</a>';}
 	}
