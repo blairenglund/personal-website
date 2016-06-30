@@ -10,6 +10,15 @@ function curPageURL() {
 	return $pageURL;
 }
 
+//this function tracks the current turn
+function determineTurn($ary1, $ary2){
+	if(count($ary1) == 5) {echo "No more moves.<br>";}
+	elseif (determineWinner($ary1) == false && determineWinner($ohs) == false) {
+		if (count($ary1) == count($ary2)) {return 1;}
+		elseif (count($ary1) > count($ary2)) {return 2;}
+	}
+}
+
 //this function gets the correct style for the boxes based on what marker they contain
 function gamebox($coords){
 	if ($_GET[$coords] == "X"){echo 'class="xselected"';} 
@@ -18,13 +27,15 @@ function gamebox($coords){
 }
 
 //this function generates links to choose the marker if one hasn't been put in that spot.
-function gameboxLinks($coords){
+function gameboxLinks($coords, $ary1, $ary2){
 	$url = curPageURL();
 	if ($_GET[$coords] == "X"){echo "X";}
 	elseif ($_GET[$coords] == "O"){echo "O";}
 	else {
-		echo '<a class="unselected__X" href="'.$url.'&'.$coords.'=X">X</a>&nbsp;';
-		echo '<a class="unselected__O" href="'.$url.'&'.$coords.'=O">O</a>';
+		if(determineTurn($ary1, $ary2) == 1){
+			echo '<a class="unselected__X" href="'.$url.'&'.$coords.'=X">X</a>&nbsp;';}
+		elseif(determineTurn($ary1, $ary2) == 2){
+			echo '<a class="unselected__O" href="'.$url.'&'.$coords.'=O">O</a>';}
 	}
 }
 
@@ -48,11 +59,11 @@ function determineWinner($ary){
 //this function determines if there is a draw. if neither the $exes and $ohs have a win, and there are five X moves played, then it's a draw.
 
 function determineDraw($ary1, $ary2){
-	if (determineWinner($ary1) == false && determineWinner($ary1) == false && sizeof($ary1) >= 5) {return true;}
+	if (determineWinner($ary1) == false && determineWinner($ary2) == false && sizeof($ary1) >= 5) {return true;}
 }
 
 //this function will determine the computer's choice to play
-function computerChoice(){
+//function computerChoice(){
 	//if b2, the best position is not played, plays there
 	//if (){}
 	//if b2 is played, then plays in a corner
@@ -61,10 +72,10 @@ function computerChoice(){
 	//elseif (){}
 	//if none of the above conditions are met, plays randomly
 	//else (){}
-}
+//}
 
 //this function will keep track of player order. Might add in a field for players' names
-function turnOrder(){
+//function turnOrder(){
 	//if the $_GET has no coords in it then it's p1's turn
 	//if (){}
 	//if it has one played coord, then it's p2's turn
@@ -72,7 +83,7 @@ function turnOrder(){
 	//if it has an even number of played coords, then it's back to p1's
 	//if it has an odd number of played coords, then it's back to p2's
 	//if someone wins or all nine are filled with no wine then it's over.
-}
+//}
 
 
 ?>
