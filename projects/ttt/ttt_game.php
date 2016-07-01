@@ -1,21 +1,31 @@
 <link rel="stylesheet" type="text/css" href="/projects/ttt/ttt_style.css">
 
-<?php include "ttt_scripts.php"; 
-
-//I want to replace query params with an associative array stored in a text file
-//They will be stored in strings like "A1,X" and "B2,O"
-//It should read the file and turn that string into an array
-//$gamefile = fopen("ttt_game.txt", a), or die("Unable to open file!")
-//fwrite(handle, string)
-
-
-//fclose("ttt_game.txt")
+<?php include "ttt_scripts.php";
 ?>
 
 <?php
+//I want to replace query params with an associative array stored in a text file
+//It should read the file and turn that string into an array
+$gamefile = fopen("ttt_game.txt", r) or die("Unable to open file!");
+$gameStateStr = fgets($gamefile);
+fclose("ttt_game.txt");
+
+$gameStateAry = array_flip(explode("|", $gameStateStr));
+print_r($gameStateAry);
+
+$playedmoves = array();
+
+foreach ($gameStateAry as $key => $value) {
+	$coord = substr($key, 0, 2);
+	$marker = substr($key, -1);
+	array_push($playedmoves, $coord);
+	$playedmoves[$coord] = $marker;
+}
+
+print_r($playedmoves);
+
 $exes = array();
 $ohs = array();
-
 
 foreach ($_GET as $position => $value) {
 	if ($value == "X") {array_push($exes, $position);}
@@ -107,11 +117,29 @@ foreach ($_GET as $position => $value) {
 <br>
 
 <?php
-$storeStrX = implode("X,",$exes);
-echo $storeStrX."<br>";
 
-$storeStrO = implode("O,",$ohs);
-echo $storeStrO."<br>";
+$allplayedmoves = array();
+
+$flipX = array_flip($exes);
+$flipO = array_flip($ohs);
+
+foreach ($flipX as $key => &$value) {
+	$value = "X";
+	$storestr = $key.",".$value;
+	array_push($allplayedmoves, $storestr);
+}
+foreach ($flipO as $key => &$value) {
+	$value = "O";
+	$storestr = $key.$value;
+	array_push($allplayedmoves, $storestr);
+}
+
+$gameString = implode("|", $allplayedmoves); //creates a string of values to store
+ 
+//Here we're opening the file back up and overwriting the old board state with the new one
+$gamefile = fopen("ttt_game.txt", w) or die("Unable to open file!");
+fwrite($gamefile, $gameString);
+fclose("ttt_game.txt");
 ?>
 
 <?php
