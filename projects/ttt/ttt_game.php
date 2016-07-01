@@ -10,10 +10,9 @@ $gamefile = fopen("ttt_game.txt", r) or die("Unable to open file!");
 $gameStateStr = fgets($gamefile);
 fclose("ttt_game.txt");
 
-$gameStateAry = array_flip(explode("|", $gameStateStr));
-print_r($gameStateAry);
+$gameStateAry = array_flip(explode("|", $gameStateStr)); //this array contains the un-separated pairs
 
-$playedmoves = array();
+$playedmoves = array(); //this array will get populated by the following loop
 
 foreach ($gameStateAry as $key => $value) {
 	$coord = substr($key, 0, 2);
@@ -22,12 +21,12 @@ foreach ($gameStateAry as $key => $value) {
 	$playedmoves[$coord] = $marker;
 }
 
-print_r($playedmoves);
+$allplayedmoves = array_diff_key($playedmoves, array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)); //creates new array with the extraneous elements deleted. functions in place of $_GET
 
 $exes = array();
 $ohs = array();
 
-foreach ($playedmoves as $position => $value) {
+foreach ($_GET as $position => $value) {
 	if ($value == "X") {array_push($exes, $position);}
 	elseif ($value == "O") {array_push($ohs, $position);}
 } ?>
@@ -37,36 +36,36 @@ foreach ($playedmoves as $position => $value) {
 <?php if ($_GET["Submit"]=="Two-Player") { ?>
 <table>
 	<tr>
-		<td <?php gamebox($playedmoves, "A1") ?> >
-			<?php gameboxLinks("A1", $exes, $ohs, $playedmoves)?>
+		<td <?php gamebox($_GET, "A1") ?> >
+			<?php gameboxLinks("A1", $exes, $ohs, $_GET)?>
 		</td>
-		<td <?php gamebox($playedmoves, "A2") ?> >
-			<?php gameboxLinks("A2", $exes, $ohs, $playedmoves)?>
+		<td <?php gamebox($_GET, "A2") ?> >
+			<?php gameboxLinks("A2", $exes, $ohs, $_GET)?>
 		</td>
-		<td <?php gamebox($playedmoves, "A3") ?> >
-			<?php gameboxLinks("A3", $exes, $ohs, $playedmoves)?>
-		</td>
-	</tr>
-	<tr>
-		<td <?php gamebox($playedmoves, "B1") ?> >
-			<?php gameboxLinks("B1", $exes, $ohs, $playedmoves)?>
-		</td>
-		<td <?php gamebox($playedmoves, "B2") ?> >
-			<?php gameboxLinks("B2", $exes, $ohs, $playedmoves)?>
-		</td>
-		<td <?php gamebox($playedmoves, "B3") ?>  >
-			<?php gameboxLinks("B3", $exes, $ohs, $playedmoves)?>
+		<td <?php gamebox($_GET, "A3") ?> >
+			<?php gameboxLinks("A3", $exes, $ohs, $_GET)?>
 		</td>
 	</tr>
 	<tr>
-		<td <?php gamebox($playedmoves, "C1") ?> >
-			<?php gameboxLinks("C1", $exes, $ohs, $playedmoves)?>
+		<td <?php gamebox($_GET, "B1") ?> >
+			<?php gameboxLinks("B1", $exes, $ohs, $_GET)?>
 		</td>
-		<td <?php gamebox($playedmoves, "C2") ?> >
-			<?php gameboxLinks("C2", $exes, $ohs, $playedmoves)?>
+		<td <?php gamebox($_GET, "B2") ?> >
+			<?php gameboxLinks("B2", $exes, $ohs, $_GET)?>
 		</td>
-		<td <?php gamebox($playedmoves, "C3") ?> >
-			<?php gameboxLinks("C3", $exes, $ohs, $playedmoves)?>
+		<td <?php gamebox($_GET, "B3") ?>  >
+			<?php gameboxLinks("B3", $exes, $ohs, $_GET)?>
+		</td>
+	</tr>
+	<tr>
+		<td <?php gamebox($_GET, "C1") ?> >
+			<?php gameboxLinks("C1", $exes, $ohs, $_GET)?>
+		</td>
+		<td <?php gamebox($_GET, "C2") ?> >
+			<?php gameboxLinks("C2", $exes, $ohs, $_GET)?>
+		</td>
+		<td <?php gamebox($_GET, "C3") ?> >
+			<?php gameboxLinks("C3", $exes, $ohs, $_GET)?>
 		</td>
 	</tr>
 </table>
@@ -75,36 +74,36 @@ foreach ($playedmoves as $position => $value) {
 <?php if ($_GET["Submit"]=="One-Player") { ?>
 <table>
 	<tr>
-		<td <?php gamebox($playedmoves, "A1") ?> >
-			<?php gameboxLinks("A1", $exes, $ohs, $playedmoves)?>
+		<td <?php gamebox($_GET, "A1") ?> >
+			<?php gameboxLinks("A1", $exes, $ohs, $_GET)?>
 		</td>
-		<td <?php gamebox($playedmoves, "A2") ?> >
-			<?php gameboxLinks("A2", $exes, $ohs, $playedmoves)?>
+		<td <?php gamebox($_GET, "A2") ?> >
+			<?php gameboxLinks("A2", $exes, $ohs, $_GET)?>
 		</td>
-		<td <?php gamebox($playedmoves, "A3") ?> >
-			<?php gameboxLinks("A3", $exes, $ohs, $playedmoves)?>
-		</td>
-	</tr>
-	<tr>
-		<td <?php gamebox($playedmoves, "B1") ?> >
-			<?php gameboxLinks("B1", $exes, $ohs, $playedmoves)?>
-		</td>
-		<td <?php gamebox($playedmoves, "B2") ?> >
-			<?php gameboxLinks("B2", $exes, $ohs, $playedmoves)?>
-		</td>
-		<td <?php gamebox($playedmoves, "B3") ?>  >
-			<?php gameboxLinks("B3", $exes, $ohs, $playedmoves)?>
+		<td <?php gamebox($_GET, "A3") ?> >
+			<?php gameboxLinks("A3", $exes, $ohs, $_GET)?>
 		</td>
 	</tr>
 	<tr>
-		<td <?php gamebox($playedmoves, "C1") ?> >
-			<?php gameboxLinks("C1", $exes, $ohs, $playedmoves)?>
+		<td <?php gamebox($_GET, "B1") ?> >
+			<?php gameboxLinks("B1", $exes, $ohs, $_GET)?>
 		</td>
-		<td <?php gamebox($playedmoves, "C2") ?> >
-			<?php gameboxLinks("C2", $exes, $ohs, $playedmoves)?>
+		<td <?php gamebox($_GET, "B2") ?> >
+			<?php gameboxLinks("B2", $exes, $ohs, $_GET)?>
 		</td>
-		<td <?php gamebox($playedmoves, "C3") ?> >
-			<?php gameboxLinks("C3", $exes, $ohs, $playedmoves)?>
+		<td <?php gamebox($_GET, "B3") ?>  >
+			<?php gameboxLinks("B3", $exes, $ohs, $_GET)?>
+		</td>
+	</tr>
+	<tr>
+		<td <?php gamebox($_GET, "C1") ?> >
+			<?php gameboxLinks("C1", $exes, $ohs, $_GET)?>
+		</td>
+		<td <?php gamebox($_GET, "C2") ?> >
+			<?php gameboxLinks("C2", $exes, $ohs, $_GET)?>
+		</td>
+		<td <?php gamebox($_GET, "C3") ?> >
+			<?php gameboxLinks("C3", $exes, $ohs, $_GET)?>
 		</td>
 	</tr>
 </table>
@@ -118,28 +117,40 @@ foreach ($playedmoves as $position => $value) {
 
 <?php
 
-$allplayedmoves = array();
+$storedplayedmoves = array();
 
 $flipX = array_flip($exes);
 $flipO = array_flip($ohs);
 
 foreach ($flipX as $key => &$value) {
 	$value = "X";
-	$storestr = $key.",".$value;
-	array_push($allplayedmoves, $storestr);
+	$storestr = $key.$value;
+	array_push($storedplayedmoves, $storestr);
 }
 foreach ($flipO as $key => &$value) {
 	$value = "O";
 	$storestr = $key.$value;
-	array_push($allplayedmoves, $storestr);
+	array_push($storedplayedmoves, $storestr);
 }
 
-$gameString = implode("|", $allplayedmoves); //creates a string of values to store
+$gameString = implode("|", $storedplayedmoves); //creates a string of values to store
  
 //Here we're opening the file back up and overwriting the old board state with the new one
 $gamefile = fopen("ttt_game.txt", w) or die("Unable to open file!");
 fwrite($gamefile, $gameString);
+
+//also going to set it to clear on a reset
+if ($_GET["Submit"]=="Reset") {fwrite($gamefile, "");}
 fclose("ttt_game.txt");
+
+//Here I'm going to open a permanent file that will store all played games as a string, including the winners
+$gameRecord = fopen("ttt_gamerecord.txt", a) or die("Unable to open file!");
+
+if (determineWinner($exes)==true){fwrite($gameRecord, "X won -- ".$gameString);}
+elseif (determineWinner($ohs) == true) {fwrite($gameRecord, "O won -- ".$gameString);}
+elseif (determineDraw($exes, $ohs) == true){fwrite($gameRecord, "Draw -- ".$gameString);}
+
+fclose("ttt_gamerecord.txt");
 ?>
 
 <?php
@@ -164,7 +175,7 @@ if ($_GET["Submit"]=="Two-Player"){
 //for one-player games--------------------------------------------------------
 
 if ($_GET["Submit"]=="One-Player"){
-	if (determineTurn($exes, $ohs)==2){echo "The computer plays ".computerChoice($_GET)."<br>";}
+	if (determineTurn($exes, $ohs)==2){echo "The computer plays ".computerChoice($_GET, $exes)."<br>";}
 }
 
 if ($_GET["Submit"]=="One-Player"){

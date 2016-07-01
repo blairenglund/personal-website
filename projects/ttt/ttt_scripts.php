@@ -44,7 +44,7 @@ function gameboxLinks($coords, $ary1, $ary2, $ary3){
 
 function determineWinner($ary){
 	//checks rows
-	if (in_array("A1", $ary) && in_array("A2", $ary) && in_array("A3", $ary)) {return true;}
+	if     (in_array("A1", $ary) && in_array("A2", $ary) && in_array("A3", $ary)) {return true;}
 	elseif (in_array("B1", $ary) && in_array("B2", $ary) && in_array("B3", $ary)) {return true;}
 	elseif (in_array("C1", $ary) && in_array("C2", $ary) && in_array("C3", $ary)) {return true;}
 	// checks columns
@@ -93,29 +93,29 @@ function blockMove($ary){
 }
 
 
-//this function will determine the computer's choice to play
-function computerChoice($ary){
+//this function will determine the computer's choice to play. $ary is &_GET, $ary2 is $exes
+function computerChoice($ary1 ,$ary2){
 	$corners = array("A1", "A3", "C1", "C3");
 	//will need to remove corners as they are played
 	foreach ($corners as $position) {
-		if (array_key_exists($position, $ary)) {array_splice($corners, array_search($position, $corners), 1);}
+		if (array_key_exists($position, $ary1)) {array_splice($corners, array_search($position, $corners), 1);}
 	}
 	$randomCorner = $corners[array_rand($corners)];
 	$possiblePlays = array("A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3");
 	//will need to remove any play as it is played
 	foreach ($possiblePlays as $position) {
-		if (array_key_exists($position, $ary)) {array_splice($possiblePlays, array_search($position, $possiblePlays), 1);}
+		if (array_key_exists($position, $ary1)) {array_splice($possiblePlays, array_search($position, $possiblePlays), 1);}
 	}
 	$randomMove = $possiblePlays[array_rand($possiblePlays)];
 
 	//if b2, the best position is not played, plays there.
-	if (array_key_exists("B2", $ary) == false) {return "B2";}
+	if (array_key_exists("B2", $ary1) == false) {return "B2";}
 	//if the opponent has two in a row, then plays to block
-	elseif (array_key_exists("B2", $ary) == true && count($exes)>1){
-		if (blockMove($ary)!=0){return blockMove($ary);}
+	elseif (array_key_exists("B2", $ary1) == true && count($ary2)>1){
+		if (blockMove($ary2)!=0){return blockMove($ary2);}
 	}
 	//if b2 is played, and nothing needs to be blocked then plays in a corner
-	elseif (array_key_exists("B2", $ary) == true && blockMove($ary) == 0) {return $randomCorner;}
+	elseif (array_key_exists("B2", $ary1) == true && blockMove($ary2) == 0) {return $randomCorner;}
 	//if none of the above conditions are met, plays randomly
 	else {return $randomMove;}
 }
