@@ -27,7 +27,7 @@ print_r($playedmoves);
 $exes = array();
 $ohs = array();
 
-foreach ($_GET as $position => $value) {
+foreach ($playedmoves as $position => $value) {
 	if ($value == "X") {array_push($exes, $position);}
 	elseif ($value == "O") {array_push($ohs, $position);}
 } ?>
@@ -37,36 +37,36 @@ foreach ($_GET as $position => $value) {
 <?php if ($_GET["Submit"]=="Two-Player") { ?>
 <table>
 	<tr>
-		<td <?php gamebox($_GET, "A1") ?> >
-			<?php gameboxLinks("A1", $exes, $ohs, $_GET)?>
+		<td <?php gamebox($playedmoves, "A1") ?> >
+			<?php gameboxLinks("A1", $exes, $ohs, $playedmoves)?>
 		</td>
-		<td <?php gamebox($_GET, "A2") ?> >
-			<?php gameboxLinks("A2", $exes, $ohs, $_GET)?>
+		<td <?php gamebox($playedmoves, "A2") ?> >
+			<?php gameboxLinks("A2", $exes, $ohs, $playedmoves)?>
 		</td>
-		<td <?php gamebox($_GET, "A3") ?> >
-			<?php gameboxLinks("A3", $exes, $ohs, $_GET)?>
-		</td>
-	</tr>
-	<tr>
-		<td <?php gamebox($_GET, "B1") ?> >
-			<?php gameboxLinks("B1", $exes, $ohs, $_GET)?>
-		</td>
-		<td <?php gamebox($_GET, "B2") ?> >
-			<?php gameboxLinks("B2", $exes, $ohs, $_GET)?>
-		</td>
-		<td <?php gamebox($_GET, "B3") ?>  >
-			<?php gameboxLinks("B3", $exes, $ohs, $_GET)?>
+		<td <?php gamebox($playedmoves, "A3") ?> >
+			<?php gameboxLinks("A3", $exes, $ohs, $playedmoves)?>
 		</td>
 	</tr>
 	<tr>
-		<td <?php gamebox($_GET, "C1") ?> >
-			<?php gameboxLinks("C1", $exes, $ohs, $_GET)?>
+		<td <?php gamebox($playedmoves, "B1") ?> >
+			<?php gameboxLinks("B1", $exes, $ohs, $playedmoves)?>
 		</td>
-		<td <?php gamebox($_GET, "C2") ?> >
-			<?php gameboxLinks("C2", $exes, $ohs, $_GET)?>
+		<td <?php gamebox($playedmoves, "B2") ?> >
+			<?php gameboxLinks("B2", $exes, $ohs, $playedmoves)?>
 		</td>
-		<td <?php gamebox($_GET, "C3") ?> >
-			<?php gameboxLinks("C3", $exes, $ohs, $_GET)?>
+		<td <?php gamebox($playedmoves, "B3") ?>  >
+			<?php gameboxLinks("B3", $exes, $ohs, $playedmoves)?>
+		</td>
+	</tr>
+	<tr>
+		<td <?php gamebox($playedmoves, "C1") ?> >
+			<?php gameboxLinks("C1", $exes, $ohs, $playedmoves)?>
+		</td>
+		<td <?php gamebox($playedmoves, "C2") ?> >
+			<?php gameboxLinks("C2", $exes, $ohs, $playedmoves)?>
+		</td>
+		<td <?php gamebox($playedmoves, "C3") ?> >
+			<?php gameboxLinks("C3", $exes, $ohs, $playedmoves)?>
 		</td>
 	</tr>
 </table>
@@ -75,36 +75,36 @@ foreach ($_GET as $position => $value) {
 <?php if ($_GET["Submit"]=="One-Player") { ?>
 <table>
 	<tr>
-		<td <?php gamebox($_GET, "A1") ?> >
-			<?php gameboxLinks("A1", $exes, $ohs, $_GET)?>
+		<td <?php gamebox($playedmoves, "A1") ?> >
+			<?php gameboxLinks("A1", $exes, $ohs, $playedmoves)?>
 		</td>
-		<td <?php gamebox($_GET, "A2") ?> >
-			<?php gameboxLinks("A2", $exes, $ohs, $_GET)?>
+		<td <?php gamebox($playedmoves, "A2") ?> >
+			<?php gameboxLinks("A2", $exes, $ohs, $playedmoves)?>
 		</td>
-		<td <?php gamebox($_GET, "A3") ?> >
-			<?php gameboxLinks("A3", $exes, $ohs, $_GET)?>
-		</td>
-	</tr>
-	<tr>
-		<td <?php gamebox($_GET, "B1") ?> >
-			<?php gameboxLinks("B1", $exes, $ohs, $_GET)?>
-		</td>
-		<td <?php gamebox($_GET, "B2") ?> >
-			<?php gameboxLinks("B2", $exes, $ohs, $_GET)?>
-		</td>
-		<td <?php gamebox($_GET, "B3") ?>  >
-			<?php gameboxLinks("B3", $exes, $ohs, $_GET)?>
+		<td <?php gamebox($playedmoves, "A3") ?> >
+			<?php gameboxLinks("A3", $exes, $ohs, $playedmoves)?>
 		</td>
 	</tr>
 	<tr>
-		<td <?php gamebox($_GET, "C1") ?> >
-			<?php gameboxLinks("C1", $exes, $ohs, $_GET)?>
+		<td <?php gamebox($playedmoves, "B1") ?> >
+			<?php gameboxLinks("B1", $exes, $ohs, $playedmoves)?>
 		</td>
-		<td <?php gamebox($_GET, "C2") ?> >
-			<?php gameboxLinks("C2", $exes, $ohs, $_GET)?>
+		<td <?php gamebox($playedmoves, "B2") ?> >
+			<?php gameboxLinks("B2", $exes, $ohs, $playedmoves)?>
 		</td>
-		<td <?php gamebox($_GET, "C3") ?> >
-			<?php gameboxLinks("C3", $exes, $ohs, $_GET)?>
+		<td <?php gamebox($playedmoves, "B3") ?>  >
+			<?php gameboxLinks("B3", $exes, $ohs, $playedmoves)?>
+		</td>
+	</tr>
+	<tr>
+		<td <?php gamebox($playedmoves, "C1") ?> >
+			<?php gameboxLinks("C1", $exes, $ohs, $playedmoves)?>
+		</td>
+		<td <?php gamebox($playedmoves, "C2") ?> >
+			<?php gameboxLinks("C2", $exes, $ohs, $playedmoves)?>
+		</td>
+		<td <?php gamebox($playedmoves, "C3") ?> >
+			<?php gameboxLinks("C3", $exes, $ohs, $playedmoves)?>
 		</td>
 	</tr>
 </table>
