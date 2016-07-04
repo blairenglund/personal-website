@@ -119,6 +119,8 @@ foreach ($_GET as $position => $value) {
 
 $storedplayedmoves = array();
 
+print_r($exes);
+
 $flipX = array_flip($exes);
 $flipO = array_flip($ohs);
 
@@ -146,9 +148,9 @@ fclose("ttt_game.txt");
 //Here I'm going to open a permanent file that will store all played games as a string, including the winners
 $gameRecord = fopen("ttt_gamerecord.txt", a) or die("Unable to open file!");
 
-if (determineWinner($exes)==true){fwrite($gameRecord, "X won -- ".$gameString);}
-elseif (determineWinner($ohs) == true) {fwrite($gameRecord, "O won -- ".$gameString);}
-elseif (determineDraw($exes, $ohs) == true){fwrite($gameRecord, "Draw -- ".$gameString);}
+if (determineWinner($exes)==true){fwrite($gameRecord, "X won -- ".$gameString."/n");}
+elseif (determineWinner($ohs) == true) {fwrite($gameRecord, "O won -- ".$gameString."/n");}
+elseif (determineDraw($exes, $ohs) == true){fwrite($gameRecord, "Draw -- ".$gameString."/n");}
 
 fclose("ttt_gamerecord.txt");
 ?>
