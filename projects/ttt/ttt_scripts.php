@@ -63,32 +63,32 @@ function determineDraw($ary1, $ary2){
 	if (determineWinner($ary1) == false && determineWinner($ary2) == false && sizeof($ary1) >= 5) {return true;}
 }
 
-//this function will determine if their is a move to be blocked by the computer. Enter the opponents moveset to return a blocking move.
-function blockMove($ary){
+//this function will determine if their is a move to be blocked by the computer. Enter the opponents moveset to return a blocking move, and $_GET to test that a move is not already played
+function blockMove($aryx, $aryg){
 		//for horiz. two-in-a-rows
-	if     (in_array("A1", $ary) == true && in_array("A2", $ary) == true) {return "A3";}
-	elseif (in_array("A2", $ary) == true && in_array("A3", $ary) == true) {return "A1";}
-	elseif (in_array("B1", $ary) == true && in_array("B2", $ary) == true) {return "B3";}
-	elseif (in_array("B2", $ary) == true && in_array("B3", $ary) == true) {return "B1";}
-	elseif (in_array("C1", $ary) == true && in_array("C2", $ary) == true) {return "C3";}
-	elseif (in_array("C2", $ary) == true && in_array("C3", $ary) == true) {return "C1";}
+	if     (in_array("A1", $aryx) == true && in_array("A2", $aryx) == true && array_key_exists("A3", $aryg)!=true) {return "A3";}
+	elseif (in_array("A2", $aryx) == true && in_array("A3", $aryx) == true && array_key_exists("A1", $aryg)!=true) {return "A1";}
+	elseif (in_array("B1", $aryx) == true && in_array("B2", $aryx) == true && array_key_exists("B3", $aryg)!=true) {return "B3";}
+	elseif (in_array("B2", $aryx) == true && in_array("B3", $aryx) == true && array_key_exists("B1", $aryg)!=true) {return "B1";}
+	elseif (in_array("C1", $aryx) == true && in_array("C2", $aryx) == true && array_key_exists("C3", $aryg)!=true) {return "C3";}
+	elseif (in_array("C2", $aryx) == true && in_array("C3", $aryx) == true && array_key_exists("C1", $aryg)!=true) {return "C1";}
 		//for vert. two-in-a-rows
-	elseif (in_array("A1", $ary) == true && in_array("B1", $ary) == true) {return "C1";}
-	elseif (in_array("A2", $ary) == true && in_array("B2", $ary) == true) {return "C2";}
-	elseif (in_array("A3", $ary) == true && in_array("B3", $ary) == true) {return "C3";}
-	elseif (in_array("B1", $ary) == true && in_array("C1", $ary) == true) {return "A1";}
-	elseif (in_array("B2", $ary) == true && in_array("C2", $ary) == true) {return "A2";}
-	elseif (in_array("B3", $ary) == true && in_array("C3", $ary) == true) {return "A3";}
+	elseif (in_array("A1", $aryx) == true && in_array("B1", $aryx) == true && array_key_exists("C1", $aryg)!=true) {return "C1";}
+	elseif (in_array("A2", $aryx) == true && in_array("B2", $aryx) == true && array_key_exists("C2", $aryg)!=true) {return "C2";}
+	elseif (in_array("A3", $aryx) == true && in_array("B3", $aryx) == true && array_key_exists("C3", $aryg)!=true) {return "C3";}
+	elseif (in_array("B1", $aryx) == true && in_array("C1", $aryx) == true && array_key_exists("A1", $aryg)!=true) {return "A1";}
+	elseif (in_array("B2", $aryx) == true && in_array("C2", $aryx) == true && array_key_exists("A2", $aryg)!=true) {return "A2";}
+	elseif (in_array("B3", $aryx) == true && in_array("C3", $aryx) == true && array_key_exists("A3", $aryg)!=true) {return "A3";}
 		//for diag. two-in-a-rows
-	elseif (in_array("A1", $ary) == true && in_array("B2", $ary) == true) {return "C3";}
-	elseif (in_array("B2", $ary) == true && in_array("C3", $ary) == true) {return "A1";}
-	elseif (in_array("A3", $ary) == true && in_array("B2", $ary) == true) {return "A1";}
-	elseif (in_array("B2", $ary) == true && in_array("C1", $ary) == true) {return "A3";}
+	elseif (in_array("A1", $aryx) == true && in_array("B2", $aryx) == true && array_key_exists("C3", $aryg)!=true) {return "C3";}
+	elseif (in_array("B2", $aryx) == true && in_array("C3", $aryx) == true && array_key_exists("A1", $aryg)!=true) {return "A1";}
+	elseif (in_array("A3", $aryx) == true && in_array("B2", $aryx) == true && array_key_exists("A1", $aryg)!=true) {return "A1";}
+	elseif (in_array("B2", $aryx) == true && in_array("C1", $aryx) == true && array_key_exists("A3", $aryg)!=true) {return "A3";}
 		//for splits
-	elseif (in_array("A1", $ary) == true && in_array("A3", $ary) == true) {return "A2";}
-	elseif (in_array("C1", $ary) == true && in_array("C3", $ary) == true) {return "C2";}
-	elseif (in_array("A1", $ary) == true && in_array("C1", $ary) == true) {return "B1";}
-	elseif (in_array("A3", $ary) == true && in_array("C3", $ary) == true) {return "B3";}
+	elseif (in_array("A1", $aryx) == true && in_array("A3", $aryx) == true && array_key_exists("A2", $aryg)!=true) {return "A2";}
+	elseif (in_array("C1", $aryx) == true && in_array("C3", $aryx) == true && array_key_exists("C2", $aryg)!=true) {return "C2";}
+	elseif (in_array("A1", $aryx) == true && in_array("C1", $aryx) == true && array_key_exists("B1", $aryg)!=true) {return "B1";}
+	elseif (in_array("A3", $aryx) == true && in_array("C3", $aryx) == true && array_key_exists("B3", $aryg)!=true) {return "B3";}
 	else {return 0;}
 }
 
@@ -111,7 +111,7 @@ function computerChoice($ary1 ,$ary2){
 	//if b2, the best position, is not played it plays there.
 	if (array_key_exists("B2", $ary1) == false) {return "B2";}
 	//if the opponent has two in a row, then plays to block
-	elseif (array_key_exists("B2", $ary1) == true && count($ary2)>1 && blockMove($ary2)!=0){
+	elseif (array_key_exists("B2", $ary1) == true && count($ary2)>1 && blockMove($ary2, $ary1)!=0){
 		return blockMove($ary2);}
 	//if b2 is played, and nothing needs to be blocked then plays in a corner
 	elseif (array_key_exists("B2", $ary1) == true && blockMove($ary2) == 0) {return $randomCorner;}
