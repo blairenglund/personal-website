@@ -14,7 +14,4 @@
 	<li>Pre-Processor - A computer program that converts data into a form that is readable by another program.</li>
 </ul>
 
-
-
-
 <?php include "articles_bottom.php"
