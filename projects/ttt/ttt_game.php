@@ -1,16 +1,15 @@
-<?php  
-if ($_SESSION['theme']=='cake time') { ?>
-<link rel="stylesheet" type="text/css" href="/projects/ttt/ttt_party.css">
-<?php } 
-else { ?>
-<link rel="stylesheet" type="text/css" href="/projects/ttt/ttt_styles.css">
-<?php } ?>
+<?php 
+if ($_SESSION["theme"] == "cake time") {
+	echo '<link rel="stylesheet" type="text/css" href="/projects/ttt/ttt_party.css">';}
+else {
+	echo '<link rel="stylesheet" type="text/css" href="/projects/ttt/ttt_style.css">';}
+?>
 
 <?php include "ttt_scripts.php";?>
 
-<!-- CONTROLLER CODE -->
-
 <?php
+// -------CONTROLLER CODE------//
+
 $url = curPageURL();
 //Should read the file and turn that string into an array
 //$gamefile = fopen("ttt_game.txt", r) or die("Unable to open file!");
@@ -74,7 +73,7 @@ foreach ($_GET as $position => $value) {
 //elseif (determineDraw($exes, $ohs) == true){fwrite($gameRecord, "Draw -- ".$gameString."\n");}
 //
 //fclose("ttt_gamerecord.txt");
-//?>
+?>
 
 <?php
 session_start();
@@ -84,10 +83,10 @@ if (determineWinner($exes)==true or determineWinner($ohs)==true or determineDraw
 
 if ($_GET['Submit']=="Reset"){$_SESSION['gamecount'] = 0;}
 
+
+// -------VIEW CODE------ //
+
 ?>
-
-<!-- VIEW CODE -->
-
 <h1>Tic Tac Toe</h1>
 <form>
 <?php if ($_GET["Submit"]=="Two-Player") { ?>

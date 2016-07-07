@@ -9,7 +9,7 @@
     	border-collapse: collapse;
     	width: 80px;
     	height: 80px;
-    	background-color: #EFEFEF;
+    	background-color: #FFF;
     	font-family: "Sullivan-Fill";
     	font-size: 2em;
     	text-align: center;
@@ -17,18 +17,18 @@
 	}
 
 	.gamebox:hover{
-		background-color: #fbfbfb;
+		background-color: #FFF;
 		font-size: 2em;
 	}
 
 	.unselected__X {
-		color: #EFEFEF;
+		color: #FFF;
 		transition: all .2s ease-in-out;
 		text-decoration: none;
 	}
 
 	.unselected__X:visited {
-		color: #EFEFEF;
+		color: #FFF;
 	}
 
 	.unselected__X:hover {
@@ -38,17 +38,17 @@
 
 	.unselected__O {
 		transition: all .2s ease-in-out;
-		color: #EFEFEF;
+		color: #FFF;
 		text-decoration: none;		
 	}
 
 	.unselected__O:visited {
-		color: #EFEFEF;
+		color: #FFF;
 	}
 
 	.unselected__O:hover {
 		font-size: 2em;
-		color: #F0F3D6;
+		color: #BC9353;
 	}
 
 	.xselected {
@@ -63,7 +63,7 @@
 	}
 
 	.oselected {
-		background-color: #F0F3D6;
+		background-color: #BC9353;
 		border-collapse: collapse;
 		color: #FFF;
     	width: 80px;
@@ -87,7 +87,7 @@
 	}
 
 	a:visited{
-		color: #FFF;
+		color: #BC9353;
 	}
 
 </style>
