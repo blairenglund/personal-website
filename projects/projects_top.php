@@ -2,7 +2,10 @@
 <html>
 <head>
 	<title><?php echo $pageTitle ?></title>
-	<?php include 'php/themeswitcher.php' ?>
+	<?php
+	session_start();
+	if ($_GET["theme"] == "cake time"){ $_SESSION["theme"] = "cake time";}
+	include 'php/themeswitcher.php' ?>
 </head>
 <body>
 	<div class="flex-container">

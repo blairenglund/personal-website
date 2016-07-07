@@ -1,19 +1,8 @@
-<!DOCTYPE html>
 <?php $pageID="photos" ?>
-<html>
-<head>
-	<title>photos</title>
-	<?php include 'php/themeswitcher.php'; ?>
-</head>
-<body>
-	<div class="flex-container">
-		<?php include 'php/sidebar.php' ?>
+<?php $pageTitle="photos" ?>
+<?php include "top.php" ?>
 
-		<div class="content">
-			<h3>This is a random .gif</h3>
-			<?php include 'php/slideshow/randomslideshow.php' ?>
-		</div>
-	</div>
+<h3>This is a random .gif</h3>
+<?php include 'php/slideshow/randomslideshow.php' ?>
 
-</body>
-</html>
+<?php include "bottom.php" ?>
