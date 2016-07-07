@@ -1,0 +1,93 @@
+<style type="text/css">
+
+	@font-face {
+	    font-family: Sullivan-Fill;
+	    src: url(/css/fonts/Sullivan-Fill.otf);
+	}
+
+	.gamebox{
+    	border-collapse: collapse;
+    	width: 80px;
+    	height: 80px;
+    	background-color: #EFEFEF;
+    	font-family: "Sullivan-Fill";
+    	font-size: 2em;
+    	text-align: center;
+    	transition: all .2s ease-in-out;
+	}
+
+	.gamebox:hover{
+		background-color: #fbfbfb;
+		font-size: 2em;
+	}
+
+	.unselected__X {
+		color: #EFEFEF;
+		transition: all .2s ease-in-out;
+		text-decoration: none;
+	}
+
+	.unselected__X:visited {
+		color: #EFEFEF;
+	}
+
+	.unselected__X:hover {
+		font-size: 2em;
+		color: #ECB3BA;
+	}
+
+	.unselected__O {
+		transition: all .2s ease-in-out;
+		color: #EFEFEF;
+		text-decoration: none;		
+	}
+
+	.unselected__O:visited {
+		color: #EFEFEF;
+	}
+
+	.unselected__O:hover {
+		font-size: 2em;
+		color: #F0F3D6;
+	}
+
+	.xselected {
+		background-color: #ECB3BA;
+		border-collapse: collapse;
+		color: #FFF;
+    	width: 80px;
+    	height: 80px;
+		font-family: "Sullivan-Fill";
+		font-size: 4em;
+		text-align: center;
+	}
+
+	.oselected {
+		background-color: #F0F3D6;
+		border-collapse: collapse;
+		color: #FFF;
+    	width: 80px;
+    	height: 80px;
+		font-family: "Sullivan-Fill";
+		font-size: 4em;
+		text-align: center;
+
+	}
+
+	.game__submit{
+		background-color: #ECB3BA;
+		color: white;
+		border: none;
+		height: 25px;
+		width: 125px;
+	}
+
+	.game__submit:hover {
+		background-color: #EFB6BD;
+	}
+
+	a:visited{
+		color: #FFF;
+	}
+
+</style>

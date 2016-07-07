@@ -1,4 +1,10 @@
-<link rel="stylesheet" type="text/css" href="/projects/ttt/ttt_style.css">
+<?php  
+if ($_SESSION['theme']=='cake time') { ?>
+<link rel="stylesheet" type="text/css" href="/projects/ttt/ttt_party.css">
+<?php } 
+else { ?>
+<link rel="stylesheet" type="text/css" href="/projects/ttt/ttt_styles.css">
+<?php } ?>
 
 <?php include "ttt_scripts.php";?>
 
