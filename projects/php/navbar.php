@@ -4,10 +4,10 @@
 	$pages = array("home"=> "index.php", "goals"=> "goals.php", "photos"=> "photos.php");
 	foreach ($pages as $page => $address) {
 		if ($page == $pageID) {
-			echo "<li id='currentpage'><a href=/".$address.">".$page."</a></li>";
+			echo "<li class='navbar__link--current'><a href=/".$address.">".$page."</a></li>";
 		}
 		else { 
-			echo "<li><a href=/".$address.">".$page."</a></li>";
+			echo "<li class='navbar__link'><a href=/".$address.">".$page."</a></li>";
 		}
 	}
 ?>
