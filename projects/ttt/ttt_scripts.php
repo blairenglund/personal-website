@@ -40,6 +40,19 @@ function gameboxLinks($coords, $ary1, $ary2, $ary3){
 	}
 }
 
+
+function gameboxLinks1P($coords, $ary1, $ary2, $ary3, $pcChoice){
+	$url = curPageURL();
+	if ($ary3[$coords] == "X"){echo "X";}
+	elseif ($ary3[$coords] == "O"){echo "O";}
+	else {
+		if(determineTurn($ary1, $ary2) == 1){
+			echo '<a class="unselected__X" href="'.$url.'&'.$coords.'=X">X</a>';}
+		elseif(determineTurn($ary1, $ary2) == 2){
+			echo '<a class="unselected__O" href="'.$url.'&'.$pcChoice.'=O">O</a>';}
+	}
+}
+
 //this function determines the winner by passing the $exes and #ohs arrays through an if-elseif loop. Each line in the function is specific to one win condition
 
 function determineWinner($ary){
@@ -92,9 +105,37 @@ function blockMove($aryx, $aryg){
 	else {return 0;}
 }
 
+//this function will determine if the pc player can win and play in the corresponding spot
+function winMove($aryo, $aryg){
+		//for horiz. two-in-a-rows
+	if     (in_array("A1", $aryo) == true && in_array("A2", $aryo) == true && array_key_exists("A3", $aryg)==false) {return "A3";}
+	elseif (in_array("A2", $aryo) == true && in_array("A3", $aryo) == true && array_key_exists("A1", $aryg)==false) {return "A1";}
+	elseif (in_array("B1", $aryo) == true && in_array("B2", $aryo) == true && array_key_exists("B3", $aryg)==false) {return "B3";}
+	elseif (in_array("B2", $aryo) == true && in_array("B3", $aryo) == true && array_key_exists("B1", $aryg)==false) {return "B1";}
+	elseif (in_array("C1", $aryo) == true && in_array("C2", $aryo) == true && array_key_exists("C3", $aryg)==false) {return "C3";}
+	elseif (in_array("C2", $aryo) == true && in_array("C3", $aryo) == true && array_key_exists("C1", $aryg)==false) {return "C1";}
+		//for vert. two-in-a-rows
+	elseif (in_array("A1", $aryo) == true && in_array("B1", $aryo) == true && array_key_exists("C1", $aryg)==false) {return "C1";}
+	elseif (in_array("A2", $aryo) == true && in_array("B2", $aryo) == true && array_key_exists("C2", $aryg)==false) {return "C2";}
+	elseif (in_array("A3", $aryo) == true && in_array("B3", $aryo) == true && array_key_exists("C3", $aryg)==false) {return "C3";}
+	elseif (in_array("B1", $aryo) == true && in_array("C1", $aryo) == true && array_key_exists("A1", $aryg)==false) {return "A1";}
+	elseif (in_array("B2", $aryo) == true && in_array("C2", $aryo) == true && array_key_exists("A2", $aryg)==false) {return "A2";}
+	elseif (in_array("B3", $aryo) == true && in_array("C3", $aryo) == true && array_key_exists("A3", $aryg)==false) {return "A3";}
+		//for diag. two-in-a-rows
+	elseif (in_array("A1", $aryo) == true && in_array("B2", $aryo) == true && array_key_exists("C3", $aryg)==false) {return "C3";}
+	elseif (in_array("B2", $aryo) == true && in_array("C3", $aryo) == true && array_key_exists("A1", $aryg)==false) {return "A1";}
+	elseif (in_array("A3", $aryo) == true && in_array("B2", $aryo) == true && array_key_exists("C1", $aryg)==false) {return "C1";}
+	elseif (in_array("B2", $aryo) == true && in_array("C1", $aryo) == true && array_key_exists("A3", $aryg)==false) {return "A3";}
+		//for splits
+	elseif (in_array("A1", $aryo) == true && in_array("A3", $aryo) == true && array_key_exists("A2", $aryg)==false) {return "A2";}
+	elseif (in_array("C1", $aryo) == true && in_array("C3", $aryo) == true && array_key_exists("C2", $aryg)==false) {return "C2";}
+	elseif (in_array("A1", $aryo) == true && in_array("C1", $aryo) == true && array_key_exists("B1", $aryg)==false) {return "B1";}
+	elseif (in_array("A3", $aryo) == true && in_array("C3", $aryo) == true && array_key_exists("B3", $aryg)==false) {return "B3";}
+	else {return 0;}
+}
 
-//this function will determine the computer's choice to play. $aryg is &_GET, $aryx is $exes
-function computerChoice($aryg ,$aryx){
+//this function will determine the computer's choice to play. $aryg is &_GET, $aryx is $exes, $aryo is $ohs
+function computerChoice($aryg ,$aryx, $aryo){
 	$corners = array("A1", "A3", "C1", "C3");
 	//will need to remove corners as they are played
 	foreach ($corners as $position) {
@@ -110,6 +151,16 @@ function computerChoice($aryg ,$aryx){
 
 	//if b2, the best position, is not played it plays there.
 	if (array_key_exists("B2", $aryg) == false) {return "B2";}
+	//if the pc has chance for win, plays winning move
+	elseif (array_key_exists("B2", $aryg) == true && count($aryo)>1){
+		$winningmove = winMove($aryo, $aryg);
+		if ($winningmove !== 0) {return $winningmove;}
+		elseif (array_key_exists("B2", $aryg) == true && count($aryx)>1) {
+			$move = blockMove($aryx, $aryg);
+			if ($move === 0) {return $randomMove;}
+			else {return $move;}
+		}
+	}
 	//if the opponent has two in a row, then plays to block
 	elseif (array_key_exists("B2", $aryg) == true && count($aryx)>1){
 		$move = blockMove($aryx, $aryg);

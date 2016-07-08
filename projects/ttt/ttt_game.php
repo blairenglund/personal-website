@@ -10,6 +10,8 @@ else {
 <?php
 // -------CONTROLLER CODE------//
 
+//SESSIONS
+
 $url = curPageURL();
 
 session_start();
@@ -44,7 +46,7 @@ if (isset($_SESSION['draws'])) {
 else {$_SESSION['draws'] = 0;}
 
 
-
+//FLAT STORAGE
 //Should read the file and turn that string into an array
 $gamefile = fopen("ttt_game.txt", r) or die("Unable to open game file!");
 $gameStateStr = fgets($gamefile);
@@ -155,39 +157,40 @@ fclose("ttt_gamerecord.txt");
 <?php } ?>
 
 <?php 
-if ($_GET["Submit"]=="One-Player") { ?>
+if ($_GET["Submit"]=="One-Player") { 
+	$pcChoice = computerChoice($_GET, $exes, $ohs); ?>
 <table>
 	<tr>
 		<td <?php gamebox($_GET, "A1") ?> >
-			<?php gameboxLinks("A1", $exes, $ohs, $_GET)?>
+			<?php gameboxLinks1P("A1", $exes, $ohs, $_GET, $pcChoice)?>
 		</td>
 		<td <?php gamebox($_GET, "A2") ?> >
-			<?php gameboxLinks("A2", $exes, $ohs, $_GET)?>
+			<?php gameboxLinks1P("A2", $exes, $ohs, $_GET, $pcChoice)?>
 		</td>
 		<td <?php gamebox($_GET, "A3") ?> >
-			<?php gameboxLinks("A3", $exes, $ohs, $_GET)?>
+			<?php gameboxLinks1P("A3", $exes, $ohs, $_GET, $pcChoice)?>
 		</td>
 	</tr>
 	<tr>
 		<td <?php gamebox($_GET, "B1") ?> >
-			<?php gameboxLinks("B1", $exes, $ohs, $_GET)?>
+			<?php gameboxLinks1P("B1", $exes, $ohs, $_GET, $pcChoice)?>
 		</td>
 		<td <?php gamebox($_GET, "B2") ?> >
-			<?php gameboxLinks("B2", $exes, $ohs, $_GET)?>
+			<?php gameboxLinks1P("B2", $exes, $ohs, $_GET, $pcChoice)?>
 		</td>
 		<td <?php gamebox($_GET, "B3") ?>  >
-			<?php gameboxLinks("B3", $exes, $ohs, $_GET)?>
+			<?php gameboxLinks1P("B3", $exes, $ohs, $_GET, $pcChoice)?>
 		</td>
 	</tr>
 	<tr>
 		<td <?php gamebox($_GET, "C1") ?> >
-			<?php gameboxLinks("C1", $exes, $ohs, $_GET)?>
+			<?php gameboxLinks1P("C1", $exes, $ohs, $_GET, $pcChoice)?>
 		</td>
 		<td <?php gamebox($_GET, "C2") ?> >
-			<?php gameboxLinks("C2", $exes, $ohs, $_GET)?>
+			<?php gameboxLinks1P("C2", $exes, $ohs, $_GET, $pcChoice)?>
 		</td>
 		<td <?php gamebox($_GET, "C3") ?> >
-			<?php gameboxLinks("C3", $exes, $ohs, $_GET)?>
+			<?php gameboxLinks1P("C3", $exes, $ohs, $_GET, $pcChoice)?>
 		</td>
 	</tr>
 </table>
@@ -206,15 +209,11 @@ if ($_GET["Submit"]=="One-Player") { ?>
 if ($_GET["Submit"]=="Two-Player"){
 	if (determineWinner($exes) == true) {echo "The Xs have it!<br>";}
 	elseif (determineWinner($ohs) == true) {echo "The Os have it!<br>";}
-}
 
-if ($_GET["Submit"]=="Two-Player"){
 	if (determineWinner($exes) == true or determineWinner($ohs) == true) {echo "Nice job! <a href='/projects/ttt.php?Submit=Two-Player'>Play again?</a>";}
 	elseif (determineTurn($exes, $ohs)==1){echo "It's your turn, Player 1";}
 	elseif (determineTurn($exes, $ohs)==2) {echo "It's your turn, Player 2";}
-}
 
-if ($_GET["Submit"]=="Two-Player"){
 	if (determineDraw($exes, $ohs) == true){echo "It's a draw. <a href='/projects/ttt.php?Submit=Two-Player'>Play again?</a>";}
 }
 ?>
@@ -224,20 +223,14 @@ if ($_GET["Submit"]=="Two-Player"){
 
 if ($_GET["Submit"]=="One-Player"){
 	if (determineTurn($exes, $ohs)==2){
-		echo "The computer plays ".computerChoice($_GET, $exes);}
-}
+		echo "The computer plays ".$pcChoice;}
 
-if ($_GET["Submit"]=="One-Player"){
 	if (determineWinner($exes) == true) {echo "The Xs have it!<br>";}
 	elseif (determineWinner($ohs) == true) {echo "The Os have it!<br>";}
-}
 
-if ($_GET["Submit"]=="One-Player"){
 	if (determineWinner($exes) == true or determineWinner($ohs) == true) {echo "Nice job! <a href='/projects/ttt.php?Submit=One-Player'>Play again?</a>";}
 	elseif (determineTurn($exes, $ohs)==1){echo "It's your turn, Player 1";}
-}
 
-if ($_GET["Submit"]=="One-Player"){
 	if (determineDraw($exes, $ohs) == true){echo "It's a draw. <a href='/projects/ttt.php?Submit=One-Player'>Play again?</a>";}
 }
 ?>
