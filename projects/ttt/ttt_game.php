@@ -258,6 +258,8 @@ echo "There have been ".$_SESSION['draws']." draws.";
 
 <?php
 
+//for displaying past games
+
 //$pastgames = fopen("ttt_gamerecord.txt", "r") or die("Unable to open file!");
 //// Output one line until end-of-file
 //while(!feof($pastgames)) {
