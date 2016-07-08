@@ -12,23 +12,23 @@ else {
 
 $url = curPageURL();
 //Should read the file and turn that string into an array
-//$gamefile = fopen("ttt_game.txt", r) or die("Unable to open file!");
-//$gameStateStr = fgets($gamefile);
-//fclose("ttt_game.txt");
-//
-//$gameStateAry = array_flip(explode("|", $gameStateStr)); //this array contains the un-separated pairs
-//
-//$playedmoves = array(); //this array will get populated by the following loop
-//
-//foreach ($gameStateAry as $key => $value) {
-//	$coord = substr($key, 0, 2);
-//	$marker = substr($key, -1);
-//	array_push($playedmoves, $coord);
-//	$playedmoves[$coord] = $marker;
-//}
-//
-//$allplayedmoves = array_diff_key($playedmoves, array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)); //creates new array with the //extraneous elements deleted. functions in place of $_GET
-//
+$gamefile = fopen("ttt_game.txt", r) or die("Unable to open game file!");
+$gameStateStr = fgets($gamefile);
+fclose("ttt_game.txt");
+
+$gameStateAry = array_flip(explode("|", $gameStateStr)); //this array contains the un-separated pairs
+
+$playedmoves = array(); //this array will get populated by the following loop
+
+foreach ($gameStateAry as $key => $value) {
+	$coord = substr($key, 0, 2);
+	$marker = substr($key, -1);
+	array_push($playedmoves, $coord);
+	$playedmoves[$coord] = $marker;
+}
+
+$allplayedmoves = array_diff_key($playedmoves, array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)); //creates new array with the extraneous elements deleted. functions in place of $_GET
+
 $exes = array();
 $ohs = array();
 
@@ -38,50 +38,50 @@ foreach ($_GET as $position => $value) {
 } ?>
 
 <?php
-//
-//$storedplayedmoves = array();
-//
-//$flipX = array_flip($exes);
-//$flipO = array_flip($ohs);
-//
-//foreach ($flipX as $key => &$value) {
-//	$value = "X";
-//	$storestr = $key.$value;
-//	array_push($storedplayedmoves, $storestr);
-//}
-//foreach ($flipO as $key => &$value) {
-//	$value = "O";
-//	$storestr = $key.$value;
-//	array_push($storedplayedmoves, $storestr);
-//}
-//
-//$gameString = implode("|", $storedplayedmoves); //creates a string of values to store
-// 
-////Here we're opening the file back up and overwriting the old board state with the new one
-//$gamefile = fopen("ttt_game.txt", w) or die("Unable to open game file!");
-//fwrite($gamefile, $gameString);
-//
-////also going to set it to clear on a reset
-//if ($_GET["Submit"]=="Reset") {fwrite($gamefile, "");}
-//fclose("ttt_game.txt");
-//
-////Here I'm going to open a permanent file that will store all played games as a string, including the winners
-//$gameRecord = fopen("ttt_gamerecord.txt", a) or die("Unable to open game record file!");
-//
-//if (determineWinner($exes)==true){fwrite($gameRecord, "X won -- ".$gameString."\n");}
-//elseif (determineWinner($ohs) == true) {fwrite($gameRecord, "O won -- ".$gameString."\n");}
-//elseif (determineDraw($exes, $ohs) == true){fwrite($gameRecord, "Draw -- ".$gameString."\n");}
-//
-//fclose("ttt_gamerecord.txt");
+
+$storedplayedmoves = array();
+
+$flipX = array_flip($exes);
+$flipO = array_flip($ohs);
+
+foreach ($flipX as $key => &$value) {
+	$value = "X";
+	$storestr = $key.$value;
+	array_push($storedplayedmoves, $storestr);
+}
+foreach ($flipO as $key => &$value) {
+	$value = "O";
+	$storestr = $key.$value;
+	array_push($storedplayedmoves, $storestr);
+}
+
+$gameString = implode("|", $storedplayedmoves); //creates a string of values to store
+ 
+//Here we're opening the file back up and overwriting the old board state with the new one
+$gamefile = fopen("ttt_game.txt", w) or die("Unable to open game file!");
+fwrite($gamefile, $gameString);
+
+//also going to set it to clear on a reset
+if ($_GET["Submit"]=="Reset") {fwrite($gamefile, "");}
+fclose("ttt_game.txt");
+
+//Here I'm going to open a permanent file that will store all played games as a string, including the winners
+$gameRecord = fopen("ttt_gamerecord.txt", a) or die("Unable to open game record file!");
+
+if (determineWinner($exes)==true){fwrite($gameRecord, "X won -- ".$gameString."\n");}
+elseif (determineWinner($ohs) == true) {fwrite($gameRecord, "O won -- ".$gameString."\n");}
+elseif (determineDraw($exes, $ohs) == true){fwrite($gameRecord, "Draw -- ".$gameString."\n");}
+
+fclose("ttt_gamerecord.txt");
 ?>
 
 <?php
 session_start();
 
-if (determineWinner($exes)==true or determineWinner($ohs)==true or determineDraw($exes, $ohs) == true){
+if (determineWinner($exes)==true or determineWinner($ohs)==true or determineDraw($exes, $ohs) == true) {
 	$_SESSION['gamecount'] = $_SESSION['gamecount'] + 1;}
 
-if ($_GET['Submit']=="Reset"){$_SESSION['gamecount'] = 0;}
+elseif ($_GET['Submit']=="Reset") {$_SESSION['gamecount'] = 0;}
 
 
 // -------VIEW CODE------ //
