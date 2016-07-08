@@ -111,10 +111,10 @@ function computerChoice($aryg ,$aryx){
 	//if b2, the best position, is not played it plays there.
 	if (array_key_exists("B2", $aryg) == false) {return "B2";}
 	//if the opponent has two in a row, then plays to block
-	elseif (array_key_exists("B2", $aryg) == true && count($aryx)>1 && blockMove($aryx, $aryg)!=0){
+	elseif (array_key_exists("B2", $aryg) == true && count($aryx)>1){
 		return blockMove($aryx, $aryg);}
 	//if b2 is played, and nothing needs to be blocked then plays in a corner
-	elseif (array_key_exists("B2", $ary1) == true && blockMove($aryx, $aryg) == 0) {return $randomCorner;}
+	elseif (array_key_exists("B2", $aryg) == true && blockMove($aryx, $aryg) == 0) {return $randomCorner;}
 	//if none of the above conditions are met, plays randomly
 	else {return $randomMove;}
 }
