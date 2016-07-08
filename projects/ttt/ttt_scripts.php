@@ -82,7 +82,7 @@ function blockMove($aryx, $aryg){
 		//for diag. two-in-a-rows
 	elseif (in_array("A1", $aryx) == true && in_array("B2", $aryx) == true && array_key_exists("C3", $aryg)==false) {return "C3";}
 	elseif (in_array("B2", $aryx) == true && in_array("C3", $aryx) == true && array_key_exists("A1", $aryg)==false) {return "A1";}
-	elseif (in_array("A3", $aryx) == true && in_array("B2", $aryx) == true && array_key_exists("A1", $aryg)==false) {return "A1";}
+	elseif (in_array("A3", $aryx) == true && in_array("B2", $aryx) == true && array_key_exists("C1", $aryg)==false) {return "C1";}
 	elseif (in_array("B2", $aryx) == true && in_array("C1", $aryx) == true && array_key_exists("A3", $aryg)==false) {return "A3";}
 		//for splits
 	elseif (in_array("A1", $aryx) == true && in_array("A3", $aryx) == true && array_key_exists("A2", $aryg)==false) {return "A2";}
@@ -112,11 +112,14 @@ function computerChoice($aryg ,$aryx){
 	if (array_key_exists("B2", $aryg) == false) {return "B2";}
 	//if the opponent has two in a row, then plays to block
 	elseif (array_key_exists("B2", $aryg) == true && count($aryx)>1){
-		return blockMove($aryx, $aryg);}
+		$move = blockMove($aryx, $aryg);
+		if ($move === 0) {return $randomMove;}
+		else {return $move;}
+	}
 	//if b2 is played, and nothing needs to be blocked then plays in a corner
-	elseif (array_key_exists("B2", $aryg) == true && blockMove($aryx, $aryg) == 0) {return $randomCorner;}
+	elseif (array_key_exists("B2", $aryg) == true && count($aryx) == 1) {return $randomCorner;}
 	//if none of the above conditions are met, plays randomly
-	else {return $randomMove;}
+	//else {return $randomMove;}
 }
 
 
